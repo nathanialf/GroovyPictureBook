@@ -14,7 +14,8 @@ size = Vector2(1428, 71)
 script = ExtResource("1_nl5ea")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1593429589]
-position = Vector2(802, 821)
+visible = false
+position = Vector2(717, 542)
 script = ExtResource("2_phrhr")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=214738131]

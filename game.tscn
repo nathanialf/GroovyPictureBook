@@ -1,14 +1,32 @@
 [gd_scene format=3 uid="uid://cltoc1fobd4yx"]
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://bnrf06xnhtmbq" path="res://page.tscn" id="2_e2o6t"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_80nbo"]
+[ext_resource type="Texture2D" uid="uid://cfqfiwroleg60" path="res://icon.svg" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bc75yp3eue6b0" path="res://page3d.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node3D" unique_id=519886471]
 script = ExtResource("1_80nbo")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1917529316]
-mesh = SubResource("QuadMesh_80nbo")
+[node name="PlayerSprite" type="Sprite3D" parent="." unique_id=843110985]
+unique_name_in_owner = true
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0)
+texture = ExtResource("3_feb5d")
 
-[node name="Page" parent="." unique_id=852683057 instance=ExtResource("2_e2o6t")]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=10132499]
+transform = Transform3D(1, 0, 0, 0, 0.7308536, 0.6825343, 0, -0.6825343, 0.7308536, 0.96, 1.951702, 2.7620027)
+current = true
+fov = 29.3
+size = 1.3631029
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073432316]
+transform = Transform3D(1, 0, 0, 0, 0.6151662, 0.78839743, 0, -0.78839743, 0.6151662, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Pages" type="Node3D" parent="." unique_id=1936395579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 0)
+
+[node name="Page3D" parent="Pages" unique_id=258537404 instance=ExtResource("4_fc0e3")]
+
+[node name="Page3D2" parent="Pages" unique_id=1944208894 instance=ExtResource("4_fc0e3")]
+
+[node name="Page3D3" parent="Pages" unique_id=1088368310 instance=ExtResource("4_fc0e3")]

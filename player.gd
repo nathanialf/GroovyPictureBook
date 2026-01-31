@@ -4,8 +4,16 @@ extends CharacterBody2D
 @export var move_speed := 600
 @export var jump_force := 1000
 
-func _process(delta: float) -> void:
-	pass
+@onready var page: Page = get_parent()
+
+func _ready() -> void:
+	page.is_active_page_changed.connect(
+		func(is_active_page: bool):
+			if is_active_page && !get_parent():
+				page.add_child(self)
+			elif !is_active_page && get_parent():
+				page.remove_child(self)
+	)
 
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector(\
@@ -16,7 +24,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity_acceleration
 	
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
-		print(is_on_floor())
 		velocity.y = -jump_force
 	
 	move_and_slide()

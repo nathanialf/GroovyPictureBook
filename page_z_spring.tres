@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TargetAnimationConfig" format=3 uid="uid://cnj2rhtvli5wh"]
+
+[ext_resource type="Script" uid="uid://8hn2y811b0n8" path="res://target_animation_config.gd" id="1_y7mik"]
+
+[resource]
+script = ExtResource("1_y7mik")
+spring_constant = 200.0
