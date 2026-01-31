@@ -254,24 +254,24 @@ node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="caracter_run" unique_id=1773396158 instance=ExtResource("1_v5og1")]
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(868295984) index="0" unique_id=837139878]
-bones/0/rotation = Quaternion(0.019088209, 1.4657496e-18, -2.4201042e-17, 0.99981785)
-bones/1/rotation = Quaternion(0.0832562, -1.3770242e-19, -9.535573e-18, 0.9965282)
-bones/2/rotation = Quaternion(0.10062936, -2.2843386e-19, -1.658239e-17, 0.994924)
-bones/3/rotation = Quaternion(0.05519725, -0.055197295, -0.6833333, 0.72592175)
-bones/4/rotation = Quaternion(0.40790662, -0.25542524, -0.5653959, 0.66984904)
-bones/5/rotation = Quaternion(0.47491106, 0.018620927, 0.029979598, 0.879326)
-bones/6/rotation = Quaternion(-0.020294035, 1.4557595e-18, 1.8504484e-17, 0.9997941)
-bones/7/rotation = Quaternion(-0.13102691, -9.494749e-19, 1.6301589e-17, 0.99137884)
-bones/8/rotation = Quaternion(-0.055197284, -0.055197243, 0.72592163, 0.68333316)
-bones/9/rotation = Quaternion(-0.11506852, -0.24488716, 0.73169106, 0.6256339)
-bones/10/rotation = Quaternion(0.3614111, 0.028258845, -0.031604078, 0.9314423)
-bones/12/rotation = Quaternion(-0.7004453, 0.096831724, 0.09683176, 0.7004453)
-bones/13/rotation = Quaternion(4.24822e-08, 1.9441424e-09, 0.17768948, 0.98408663)
-bones/14/rotation = Quaternion(-8.590857e-08, -6.492243e-09, -0.44713286, 0.8944676)
-bones/16/rotation = Quaternion(-0.6333678, 0.3143966, 0.31439653, 0.6333679)
-bones/17/rotation = Quaternion(2.4781894e-08, -8.427212e-10, -0.74716794, 0.6646353)
-bones/18/rotation = Quaternion(-7.67929e-09, 8.685241e-08, 0.6118932, 0.7909404)
+[node name="Armature" parent="." index="2" unique_id=868295984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0029407472, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=837139878]
+bones/0/rotation = Quaternion(-0.053640854, 3.4138548e-19, 4.227746e-18, 0.9985603)
+bones/1/rotation = Quaternion(0.054309085, -3.5343913e-19, -4.0035413e-18, 0.9985242)
+bones/2/rotation = Quaternion(0.03730491, 1.4498412e-19, -2.9906924e-18, 0.999304)
+bones/4/rotation = Quaternion(0.07064755, -0.032378785, -0.6560471, 0.75070816)
+bones/5/rotation = Quaternion(0.15915935, -0.019197863, 0.0005351127, 0.9870661)
+bones/6/rotation = Quaternion(0.039674092, 1.422837e-25, -8.809418e-18, 0.9992127)
+bones/7/rotation = Quaternion(-0.08482175, -9.088229e-19, 6.944712e-18, 0.9963962)
+bones/9/rotation = Quaternion(-0.01965828, -0.11248577, 0.6748416, 0.7290744)
+bones/10/rotation = Quaternion(0.22057176, 0.01017057, -0.019954002, 0.9751136)
+bones/12/rotation = Quaternion(-0.7049747, 0.05486958, 0.054869633, 0.7049747)
+bones/13/rotation = Quaternion(1.2460964e-09, 2.264071e-15, 0.035777517, 0.99935985)
+bones/14/rotation = Quaternion(-9.178052e-08, -2.861164e-08, -0.7808538, 0.6247139)
+bones/16/rotation = Quaternion(-0.6937628, 0.13672343, 0.13672335, 0.6937628)
+bones/17/rotation = Quaternion(1.6378399e-08, 2.4147872e-15, -0.22476278, 0.9744135)
 
 [node name="AnimationPlayer" parent="." index="3" unique_id=1170230908]
 libraries/ = SubResource("AnimationLibrary_vei41")
@@ -285,5 +285,5 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/StateMachine/conditions/jump_end = false
 parameters/StateMachine/conditions/jump_start = false
 parameters/StateMachine/conditions/turn = false
-parameters/StateMachine/BlendTree/Blend2/blend_amount = 1.0
+parameters/StateMachine/BlendTree/Blend2/blend_amount = 0.0
 "parameters/StateMachine/BlendTree 2/TimeScale/scale" = 0.04999999999999716
