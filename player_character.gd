@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var move_speed := 600
 @export var jump_force := 1200
 @export var wall_jump_force := Vector2(1100,-900)
+@export var movement_weight := 5.0
 
 var player_animator: AnimationTree 
 var player_obj: Node 
@@ -41,10 +42,10 @@ func _physics_process(delta: float) -> void:
 	velocity.x += (move_input.x * move_speed)*0.3*walljump_move_restrict
 	
 	if wall_jump_period < 0:
-		velocity.x *= (1-(delta*5.0))
+		velocity.x *= (1-(delta*movement_weight))
 		velocity.x = clamp(velocity.x, -move_speed, move_speed)
 	else: 
-		velocity.x *= (1-(delta*3.0))
+		velocity.x *= (1-(delta*(movement_weight/2.0)))
 	
 	var movement_speed = clamp(abs(velocity.x)/600.0, 0.0, 1.0)
 	player_animator.set("parameters/StateMachine/BlendTree/Blend2/blend_amount", movement_speed)
