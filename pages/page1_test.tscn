@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://c3xyum43h7j3r"]
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_be057"]
-[ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_be057"]
+[ext_resource type="Script" path="res://page_wall.gd" id="2_be057"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_be057"]
 friction = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be057"]
 size = Vector2(1200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woo8u"]
+size = Vector2(200, 200)
 
 [node name="Page1Test" type="Node2D" unique_id=1877032122]
 script = ExtResource("1_be057")
@@ -17,11 +20,42 @@ metadata/_custom_type_script = "uid://1t6pghxubui0"
 position = Vector2(837, 1014)
 physics_material_override = SubResource("PhysicsMaterial_be057")
 script = ExtResource("2_be057")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall" unique_id=147044664]
+color = Color(0, 1, 0, 1)
 polygon = PackedVector2Array(-600, -25, 600, -25, 600, 25, -600, 25)
 uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall" unique_id=422001833]
 shape = SubResource("RectangleShape2D_be057")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PageWall" unique_id=1268208909]
+shape = SubResource("RectangleShape2D_be057")
+
+[node name="PageWall2" type="StaticBody2D" parent="." unique_id=1325699358]
+position = Vector2(192, 744)
+scale = Vector2(1, 3)
+physics_material_override = SubResource("PhysicsMaterial_be057")
+script = ExtResource("2_be057")
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall2" unique_id=224386432]
+color = Color(0, 1, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall2" unique_id=1399739485]
+shape = SubResource("RectangleShape2D_woo8u")
+
+[node name="PageWall3" type="StaticBody2D" parent="." unique_id=2023808149]
+position = Vector2(594, 428)
+scale = Vector2(1, 3)
+physics_material_override = SubResource("PhysicsMaterial_be057")
+script = ExtResource("2_be057")
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall3" unique_id=2070408020]
+color = Color(0, 1, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall3" unique_id=1497956169]
+shape = SubResource("RectangleShape2D_woo8u")
