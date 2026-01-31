@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c3xyum43h7j3r"]
+
+[ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_be057"]
+[ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_be057"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_be057"]
+friction = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be057"]
+size = Vector2(1200, 50)
+
+[node name="Page1Test" type="Node2D" unique_id=1877032122]
+script = ExtResource("1_be057")
+metadata/_custom_type_script = "uid://1t6pghxubui0"
+
+[node name="PageWall" type="StaticBody2D" parent="." unique_id=1622899687]
+position = Vector2(837, 1014)
+physics_material_override = SubResource("PhysicsMaterial_be057")
+script = ExtResource("2_be057")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall" unique_id=147044664]
+polygon = PackedVector2Array(-600, -25, 600, -25, 600, 25, -600, 25)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall" unique_id=422001833]
+shape = SubResource("RectangleShape2D_be057")

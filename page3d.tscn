@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bc75yp3eue6b0"]
 
 [ext_resource type="Script" uid="uid://c7x1khv6k76qp" path="res://page_3d.gd" id="1_8fv3p"]
-[ext_resource type="PackedScene" uid="uid://bnrf06xnhtmbq" path="res://page.tscn" id="2_vb834"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vb834"]
 viewport_path = NodePath("SubViewport")
@@ -17,6 +16,8 @@ albedo_texture = SubResource("ViewportTexture_vb834")
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_vb834")
 size = Vector2(1.92, 1.08)
+subdivide_width = 16
+subdivide_depth = 16
 
 [node name="Page3D" type="Node3D" unique_id=258537404]
 script = ExtResource("1_8fv3p")
@@ -27,5 +28,3 @@ mesh = SubResource("QuadMesh_vbf4h")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1040176620]
 transparent_bg = true
 size = Vector2i(1920, 1080)
-
-[node name="Page" parent="SubViewport" unique_id=852683057 instance=ExtResource("2_vb834")]

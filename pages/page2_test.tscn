@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://qa47f04qccbp"]
+
+[ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_hre08"]
+[ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_68gdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q5re"]
+size = Vector2(600, 50)
+
+[node name="Page2Test" type="Node2D" unique_id=1659456041]
+script = ExtResource("1_hre08")
+page_color = Color(1, 1, 0, 1)
+metadata/_custom_type_script = "uid://1t6pghxubui0"
+
+[node name="PageWall" type="StaticBody2D" parent="." unique_id=267178102]
+position = Vector2(1415, 825)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall" unique_id=165765098]
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall" unique_id=1424260999]
+shape = SubResource("RectangleShape2D_1q5re")

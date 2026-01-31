@@ -9,11 +9,13 @@ extends CharacterBody2D
 func _ready() -> void:
 	page.is_active_page_changed.connect(
 		func(is_active_page: bool):
-			if is_active_page && !get_parent():
-				page.add_child(self)
-			elif !is_active_page && get_parent():
-				page.remove_child(self)
+			if is_active_page: __activate_player()
+			else: __deactivate_player()
 	)
+	(func():
+		if page.is_active_page: __activate_player()
+		else: __deactivate_player()
+	).call_deferred()
 
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector(\
@@ -27,3 +29,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -jump_force
 	
 	move_and_slide()
+
+func __activate_player() -> void:
+	if !get_parent(): page.add_child(self)
+
+func __deactivate_player() -> void:
+	if get_parent(): page.remove_child(self)

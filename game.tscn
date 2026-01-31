@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cltoc1fobd4yx"]
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://cfqfiwroleg60" path="res://icon.svg" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bc75yp3eue6b0" path="res://page3d.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node3D" unique_id=519886471]
@@ -9,24 +11,24 @@ script = ExtResource("1_80nbo")
 
 [node name="PlayerSprite" type="Sprite3D" parent="." unique_id=843110985]
 unique_name_in_owner = true
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0.01)
 texture = ExtResource("3_feb5d")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=10132499]
-transform = Transform3D(1, 0, 0, 0, 0.7308536, 0.6825343, 0, -0.6825343, 0.7308536, 0.96, 1.951702, 2.7620027)
+transform = Transform3D(1, 0, 0, 0, 0.99245226, 0.12263152, 0, -0.12263152, 0.99245226, 0.96, 0.1715796, 3.1477735)
 current = true
 fov = 29.3
 size = 1.3631029
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073432316]
-transform = Transform3D(1, 0, 0, 0, 0.6151662, 0.78839743, 0, -0.78839743, 0.6151662, 0, 0, 0)
+transform = Transform3D(0.9114464, 0.32436162, -0.253091, 0, 0.6151662, 0.78839743, 0.4114189, -0.718582, 0.560691, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Pages" type="Node3D" parent="." unique_id=1936395579]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 0)
 
 [node name="Page3D" parent="Pages" unique_id=258537404 instance=ExtResource("4_fc0e3")]
+page_scene = ExtResource("3_fc0e3")
 
-[node name="Page3D2" parent="Pages" unique_id=1944208894 instance=ExtResource("4_fc0e3")]
-
-[node name="Page3D3" parent="Pages" unique_id=1088368310 instance=ExtResource("4_fc0e3")]
+[node name="Page3D2" parent="Pages" unique_id=187844261 instance=ExtResource("4_fc0e3")]
+page_scene = ExtResource("4_7jktm")

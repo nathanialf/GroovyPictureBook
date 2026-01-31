@@ -4,6 +4,7 @@ var active_page_index: int = 0
 var active_page: Page:
 	set(value):
 		if value != active_page:
+			active_page_changing.emit(value)
 			active_page = value
 			active_page_changed.emit(value)
 signal active_page_changing(page: Page)
@@ -13,7 +14,8 @@ func _ready() -> void:
 	active_page_changing.connect(
 		func(new_active_page: Page):
 			var prev_active_page := active_page
-			prev_active_page.is_active_page = false
+			if prev_active_page: 
+				prev_active_page.is_active_page = false
 			new_active_page.is_active_page = true
 	)
 	
@@ -38,9 +40,11 @@ func __pos2d_to_pos3d(pos2d: Vector2) -> Vector2:
 func __refresh_page_positions() -> void:
 	var page3ds := __all_page3ds()
 	for page_i in page3ds.size():
-		var page3d := page3ds[page_i]
+		var page3d: Page3D = page3ds[page_i]
+		var page := page3d.page
+		page.page_index = page_i
 		var page_spacing := 0.25
-		var page_z := (page_i - active_page_index) * page_spacing
+		var page_z := (page_i - active_page_index) * -page_spacing
 		var target_anim: TargetAnimation
 		if page3d.has_meta("target_anim"):
 			target_anim = page3d.get_meta("target_anim")
