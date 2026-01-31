@@ -7,10 +7,10 @@ Theme: Masks
 Developed at The MADE in Oakland, CA
 
 ## Team
-Game Design: Chris Wiley
+Game Design: [Chris Wiley](https://github.com/Wolfen000)
 
-Programming and Music: Steven Schoen
+Programming and Music: [Steven Schoen](https://github.com/DSteve595)
 
-3D Art and Programming: John Van Atta
+3D Art and Programming: [John Van Atta](https://github.com/triggthediscovery)
 
-Production/Project Managment: Nathanial Fine
+Production/Project Managment: [Nathanial Fine](https://github.com/nathanialf)
