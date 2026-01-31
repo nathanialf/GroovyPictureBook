@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cltoc1fobd4yx"]
+
+[ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://bnrf06xnhtmbq" path="res://page.tscn" id="2_e2o6t"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_80nbo"]
+
+[node name="Game" type="Node3D" unique_id=519886471]
+script = ExtResource("1_80nbo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1917529316]
+mesh = SubResource("QuadMesh_80nbo")
+
+[node name="Page" parent="." unique_id=852683057 instance=ExtResource("2_e2o6t")]
