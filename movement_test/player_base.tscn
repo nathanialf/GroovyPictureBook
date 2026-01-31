@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cyxbj7th7mso0"]
+
+[ext_resource type="PackedScene" uid="uid://d2rgkhp8ovnvr" path="res://movement_test/caracter_run.blend" id="1_gydhu"]
+
+[node name="Node2D" type="Node2D" unique_id=1659820919]
+
+[node name="caracter_run" parent="." unique_id=1773396158 instance=ExtResource("1_gydhu")]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cltoc1fobd4yx"]
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
-[ext_resource type="Texture2D" uid="uid://cfqfiwroleg60" path="res://icon.svg" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bc75yp3eue6b0" path="res://page3d.tscn" id="4_fc0e3"]
 
@@ -12,7 +12,9 @@ script = ExtResource("1_80nbo")
 [node name="PlayerSprite" type="Sprite3D" parent="." unique_id=843110985]
 unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0.01)
-texture = ExtResource("3_feb5d")
+
+[node name="character_run" parent="PlayerSprite" unique_id=1773396158 instance=ExtResource("2_feb5d")]
+transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=10132499]
 transform = Transform3D(1, 0, 0, 0, 0.99245226, 0.12263152, 0, -0.12263152, 0.99245226, 0.96, 0.1715796, 3.1477735)
