@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @export var gravity_acceleration := 50.0
 @export var move_speed := 600
-@export var jump_force := 1000
+@export var jump_force := 1200
+@export var wall_jump_force := Vector2(1100,-900)
 
 var player_animator: AnimationTree 
 var player_obj: Node 
@@ -13,6 +14,10 @@ var jump_animation_reset = 0.0
 var turn_animation_reset = 0.0
 var player_angle = 90.0
 var player_angle_target = 90.0
+var wall_jump_period = 0.0
+
+var can_walljump_left = true
+var can_walljump_right = true
 
 func _ready() -> void:
 	page.is_active_page_changed.connect(
@@ -31,7 +36,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector(\
 		"Move left", "Move right", "Nothing", "Nothing")
-	velocity.x = move_input.x * move_speed
+		
+	var walljump_move_restrict = clamp((wall_jump_period)*-5.0, 0.0, 1.0)
+	velocity.x += (move_input.x * move_speed)*0.3*walljump_move_restrict
+	
+	if wall_jump_period < 0:
+		velocity.x *= (1-(delta*5.0))
+		velocity.x = clamp(velocity.x, -move_speed, move_speed)
+	else: 
+		velocity.x *= (1-(delta*3.0))
 	
 	var movement_speed = clamp(abs(velocity.x)/600.0, 0.0, 1.0)
 	player_animator.set("parameters/StateMachine/BlendTree/Blend2/blend_amount", movement_speed)
@@ -54,6 +67,7 @@ func _physics_process(delta: float) -> void:
 		
 	jump_animation_reset -= delta
 	turn_animation_reset -= delta
+	wall_jump_period -= delta
 	
 	if turn_animation_reset < 0.0:
 		player_animator.set("parameters/StateMachine/conditions/turn", false)
@@ -70,11 +84,41 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 		
 	
+	var space_state = get_world_2d().direct_space_state
+	var left_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(-100.0, 0.0))
+	var left_wall_result = space_state.intersect_ray(left_wall_query)
+	var walljump_left_emable = can_walljump_left && left_wall_result
+	var right_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(100.0, 0.0))
+	var right_wall_result = space_state.intersect_ray(right_wall_query)
+	var walljump_right_emable = can_walljump_right && right_wall_result
+
+	if is_on_floor():
+		can_walljump_left = true
+		can_walljump_right = true
+		
+	
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = -jump_force
 		player_animator.set("parameters/StateMachine/conditions/jump_start", true)
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
 		jump_animation_reset = 0.1
+
+	elif Input.is_action_just_pressed("Jump") && (walljump_left_emable || walljump_right_emable):
+		if walljump_left_emable:
+			velocity = wall_jump_force
+			can_walljump_left = false
+			can_walljump_right = true
+		else:
+			velocity = wall_jump_force
+			velocity.x *= -1.0
+			can_walljump_left = true
+			can_walljump_right = false
+		
+		player_animator.set("parameters/StateMachine/conditions/jump_start", true)
+		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
+		jump_animation_reset = 0.1
+		wall_jump_period = 0.2
+		
 	
 	move_and_slide()
 
