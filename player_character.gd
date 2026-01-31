@@ -27,7 +27,6 @@ func _ready() -> void:
 
 	player_obj = get_node("/root/Game/PlayerSprite/character_run")
 	player_animator = player_obj.get_node("AnimationTree")
-	print_debug(get_path())
 
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector(\
@@ -63,8 +62,6 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 	else:
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
-		
-	print_debug(player_animator.get("parameters/StateMachine/conditions/jump_end"))
 		
 	if !is_on_floor():
 		velocity.y += gravity_acceleration
