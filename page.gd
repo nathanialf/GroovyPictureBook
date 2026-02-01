@@ -10,7 +10,7 @@ extends Node2D
 
 var __player_character: CharacterBody2D
 var __page_background := PageBackground.new()
-var __hole_test_body := AnimatableBody2D.new()
+var __hole_test_body: AnimatableBody2D
 
 var is_active_page := false:
 	set(value):
@@ -28,13 +28,15 @@ func _init() -> void:
 	
 	add_child(__page_background)
 	
-	# copy player collision to hole tester
-	var player_collision: CollisionShape2D = __player_character\
-		.get_node("CollisionShape2D")
-	__hole_test_body.add_child(player_collision.duplicate())
-	__hole_test_body.set_collision_layer_value(1, false)
-	__hole_test_body.set_collision_layer_value(2, true)
-	add_child(__hole_test_body)
+	if !Engine.is_editor_hint():
+		# copy player collision to hole tester
+		var player_collision: CollisionShape2D = __player_character\
+			.get_node("CollisionShape2D")
+		__hole_test_body = AnimatableBody2D.new()
+		__hole_test_body.add_child(player_collision.duplicate())
+		__hole_test_body.set_collision_layer_value(1, false)
+		__hole_test_body.set_collision_layer_value(2, true)
+		add_child(__hole_test_body)
 
 func _process(delta: float) -> void:
 	if !Engine.is_editor_hint():
