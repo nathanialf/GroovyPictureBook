@@ -38,6 +38,7 @@ func _ready() -> void:
 
 	player_obj = get_node("/root/Game/PlayerSprite/character_run")
 	player_animator = player_obj.get_node("AnimationTree")
+	
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector(\
 		"Move left", "Move right", "Nothing", "Nothing")
@@ -179,6 +180,9 @@ func _physics_process(delta: float) -> void:
 		wall_jump_period = 0.1
 	
 	move_and_slide()
+	
+	if position.x < 0 or position.y < 0 or position.x > 1920 or position.y > 1080:
+		print("DEATH")
 
 func __activate_player() -> void:
 	if !get_parent(): page.add_child(self)
