@@ -23,7 +23,7 @@ func _init() -> void:
 	if !Engine.is_editor_hint():
 		__player_character = load("res://player_character.tscn").instantiate()
 		add_child(__player_character)
-		__player_character.position = Vector2(1920/2.0, 0)
+		__player_character.position = Vector2(1920/2.0, 1080/2.0)
 	
 	add_child(__page_background)
 

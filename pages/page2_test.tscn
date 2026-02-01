@@ -14,7 +14,7 @@ page_background = ExtResource("3_yra41")
 metadata/_custom_type_script = "uid://1t6pghxubui0"
 
 [node name="PageWall" type="StaticBody2D" parent="." unique_id=267178102]
-position = Vector2(1415, 825)
+position = Vector2(761, 662)
 script = ExtResource("2_68gdu")
 metadata/_custom_type_script = "uid://ct6uppvyratyn"
 

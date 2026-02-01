@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 	var player_pos_3d := __pos2d_to_pos3d(player_pos_2d)
 	$PlayerSprite.position.x = player_pos_3d.x
 	$PlayerSprite.position.y = player_pos_3d.y
+	$Camera3D.notify_moved_player()
 
 func __pos2d_to_pos3d(pos2d: Vector2) -> Vector2:
 	# TODO lol
