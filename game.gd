@@ -1,5 +1,7 @@
 extends Node3D
 
+enum State { MAIN_MENU, CAMERA_ZOOM_IN, GAME, CAMERA_ZOOM_OUT, END }
+
 var active_page_index: int = 0
 var active_page: Page:
 	set(value):
@@ -9,6 +11,11 @@ var active_page: Page:
 			active_page_changed.emit(value)
 signal active_page_changing(page: Page)
 signal active_page_changed(page: Page)
+
+var game_state: State = State.MAIN_MENU
+var transition_time = 0.0
+
+@export var book_cover: Node3D
 
 func _ready() -> void:
 	active_page_changing.connect(
@@ -37,7 +44,20 @@ func _process(delta: float) -> void:
 	var player_pos_3d := __pos2d_to_pos3d(player_pos_2d)
 	$PlayerSprite.position.x = player_pos_3d.x
 	$PlayerSprite.position.y = player_pos_3d.y
-	$Camera3D.notify_moved_player()
+	if game_state == State.MAIN_MENU:
+		$Camera3D.lerp_main_angle(delta)
+		
+		if Input.is_action_just_pressed("Jump"):
+			game_state = State.CAMERA_ZOOM_IN
+			transition_time = 4.0
+	if game_state == State.CAMERA_ZOOM_IN:
+		$Camera3D.lerp_game_angle(delta)
+		transition_time -= delta
+		
+		if transition_time < 0:
+			game_state = State.GAME
+	if game_state == State.GAME:
+		$Camera3D.notify_moved_player(delta)
 
 func __player_is_near_forward_hole() -> bool:
 	var test_page := active_page
@@ -122,6 +142,11 @@ func __all_pages() -> Array[Page]:
 
 func index_of_page(page: Page) -> int:
 	return __all_pages().find(page)
+	
+func get_current_page_index() -> int:
+	var pages := __all_pages()
+	var current_page_index := pages.find(active_page)
+	return current_page_index
 
 func __all_page3ds() -> Array[Node3D]:
 	var result: Array[Node3D] = []

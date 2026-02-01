@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dqgwr5x53ceba"]
+
+[ext_resource type="PackedScene" uid="uid://d3yisyoeptcsx" path="res://models/table.blend" id="1_socmc"]
+
+[node name="table" unique_id=358082385 instance=ExtResource("1_socmc")]
+
+[node name="Light" parent="." index="0" unique_id=194314970]
+visible = false
+
+[node name="Camera" parent="." index="1" unique_id=1580900135]
+visible = false

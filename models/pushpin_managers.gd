@@ -6,6 +6,7 @@ extends Node3D
 @export var player: Node3D
 @export var edge_obj: Node3D
 @export var edge_obj_dist := 1.0
+@export var game_node: Node3D
 
 var finished = false
 var remove_time = 0.0
@@ -18,6 +19,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	var pin_num = 0
+	var current_page = game_node.get_current_page_index()
 	
 	for pin in pins:
 		if pin != null:
@@ -32,8 +34,19 @@ func _process(delta: float) -> void:
 				ui_pins[pin_index].position.y = 29.0
 			else: 
 				ui_pins[pin_index].position.y = -129.0
+
+	if !finished:
+		if current_page != 0:
+			edge_obj.position.z += delta*1.5
+			edge_obj.position.z = clamp(edge_obj.position.z, 0.0, 0.3)
+		elif !finished:
+			edge_obj.position.z -= delta*1.5
+			edge_obj.position.z = clamp(edge_obj.position.z, 0.0, 0.3)
+			
+		edge_obj.position.x = inital_pos.x*(1.0+(edge_obj.position.z*1.5))
+		edge_obj.position.y = ((inital_pos.y+0.5)*(1.0+edge_obj.position.z))-0.5
 	
-	if pin_num==0:
+	if pin_num==0 and current_page==0:
 		var diff_vec = Vector2(player.position.x, player.position.y) - Vector2(edge_obj.position.x, edge_obj.position.y)
 		var diff = diff_vec.length()
 		
@@ -58,6 +71,5 @@ func _process(delta: float) -> void:
 			
 			edge_obj.position = inital_pos + Vector3(offset_time,pop_y,0)
 			
-		
 		edge_obj.rotation = Vector3(0,0,shake_amt+pop_amt)
 		
