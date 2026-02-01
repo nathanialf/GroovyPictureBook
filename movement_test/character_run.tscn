@@ -428,10 +428,18 @@ advance_condition = &"jump_end"
 advance_mode = 2
 advance_condition = &"jump_off"
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_03ese"]
+switch_mode = 2
+advance_mode = 2
+
+>>>>>>> Stashed changes
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t3p3l"]
 advance_mode = 2
 advance_condition = &"wall_hug_right"
 
+<<<<<<< Updated upstream
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5fydn"]
 switch_mode = 2
 advance_mode = 2
@@ -450,6 +458,8 @@ advance_condition = &"clear_walljump"
 advance_mode = 2
 advance_condition = &"clear_walljump"
 
+=======
+>>>>>>> Stashed changes
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_b7jbj"]
 states/BlendTree/node = SubResource("AnimationNodeBlendTree_hrryg")
 states/BlendTree/position = Vector2(518, 199)
@@ -475,11 +485,19 @@ states/wall_jump_right_anims_wall_jump_right_end/node = SubResource("AnimationNo
 states/wall_jump_right_anims_wall_jump_right_end/position = Vector2(701, -177)
 states/wall_jump_right_begin/node = SubResource("AnimationNodeBlendTree_c4g7j")
 states/wall_jump_right_begin/position = Vector2(599, -67)
+<<<<<<< Updated upstream
 transitions = ["jump_anim_jump_end", "BlendTree", SubResource("AnimationNodeStateMachineTransition_b7jbj"), "Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_nwta0"), "jump_mid", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_ben5d"), "BlendTree", "jump_start", SubResource("AnimationNodeStateMachineTransition_6xpsq"), "jump_start", "jump_mid", SubResource("AnimationNodeStateMachineTransition_o2n41"), "BlendTree", "turn_anim", SubResource("AnimationNodeStateMachineTransition_rgx7j"), "turn_anim", "BlendTree", SubResource("AnimationNodeStateMachineTransition_yeny4"), "turn_anim", "jump_start", SubResource("AnimationNodeStateMachineTransition_d3orr"), "wall_jump_anims_player_wall_jump_mid", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_33qun"), "jump_mid", "wall_jump_begin", SubResource("AnimationNodeStateMachineTransition_mhtm0"), "wall_jump_begin", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_sv4lg"), "wall_jump_begin", "wall_jump_anims_player_wall_jump_mid", SubResource("AnimationNodeStateMachineTransition_tifrr"), "wall_jump_anims_player_wall_jump_mid", "wall_jump_end", SubResource("AnimationNodeStateMachineTransition_c4g7j"), "wall_jump_end", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_2qoab"), "wall_jump_end", "jump_mid", SubResource("AnimationNodeStateMachineTransition_we5pr"), "wall_jump_right_begin", "wall_jump_right_anims_wall_jump_right_end", SubResource("AnimationNodeStateMachineTransition_5l6ap"), "wall_jump_right_anims_wall_jump_right_end", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_qs3so"), "wall_jump_right_begin", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_uvxei"), "wall_jump_right_anims_wall_jump_right_end", "BlendTree 3", SubResource("AnimationNodeStateMachineTransition_17o5x"), "jump_mid", "wall_jump_right_begin", SubResource("AnimationNodeStateMachineTransition_t3p3l"), "BlendTree 3", "jump_mid", SubResource("AnimationNodeStateMachineTransition_5fydn"), "BlendTree", "jump_mid", SubResource("AnimationNodeStateMachineTransition_03ese"), "wall_jump_anims_player_wall_jump_mid", "jump_mid", SubResource("AnimationNodeStateMachineTransition_neiu4"), "wall_jump_right_anims_wall_jump_right_end", "jump_mid", SubResource("AnimationNodeStateMachineTransition_e0ti1")]
 graph_offset = Vector2(-84, -220)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vei41"]
 graph_offset = Vector2(87.18329, 117.634094)
+=======
+transitions = ["jump_anim_jump_end", "BlendTree", SubResource("AnimationNodeStateMachineTransition_b7jbj"), "Start", "BlendTree", SubResource("AnimationNodeStateMachineTransition_nwta0"), "jump_mid", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_ben5d"), "BlendTree", "jump_start", SubResource("AnimationNodeStateMachineTransition_6xpsq"), "jump_start", "jump_mid", SubResource("AnimationNodeStateMachineTransition_o2n41"), "BlendTree", "turn_anim", SubResource("AnimationNodeStateMachineTransition_rgx7j"), "turn_anim", "BlendTree", SubResource("AnimationNodeStateMachineTransition_yeny4"), "turn_anim", "jump_start", SubResource("AnimationNodeStateMachineTransition_d3orr"), "wall_jump_anims_player_wall_jump_mid", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_33qun"), "jump_mid", "wall_jump_begin", SubResource("AnimationNodeStateMachineTransition_mhtm0"), "wall_jump_begin", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_sv4lg"), "wall_jump_begin", "wall_jump_anims_player_wall_jump_mid", SubResource("AnimationNodeStateMachineTransition_tifrr"), "wall_jump_anims_player_wall_jump_mid", "wall_jump_end", SubResource("AnimationNodeStateMachineTransition_c4g7j"), "wall_jump_end", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_2qoab"), "wall_jump_end", "jump_mid", SubResource("AnimationNodeStateMachineTransition_we5pr"), "wall_jump_right_begin", "wall_jump_right_anims_wall_jump_right_end", SubResource("AnimationNodeStateMachineTransition_5l6ap"), "wall_jump_right_anims_wall_jump_right_end", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_qs3so"), "wall_jump_right_begin", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_uvxei"), "wall_jump_right_anims_wall_jump_right_end", "BlendTree 3", SubResource("AnimationNodeStateMachineTransition_17o5x"), "BlendTree 3", "jump_anim_jump_end", SubResource("AnimationNodeStateMachineTransition_03ese"), "jump_mid", "wall_jump_right_begin", SubResource("AnimationNodeStateMachineTransition_t3p3l")]
+graph_offset = Vector2(18, -193)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vei41"]
+graph_offset = Vector2(-95.502594, 112.116516)
+>>>>>>> Stashed changes
 nodes/output/position = Vector2(840, 320)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_b7jbj")
 nodes/StateMachine/position = Vector2(440, 260)
@@ -488,7 +506,11 @@ node_connections = [&"output", 0, &"StateMachine"]
 [node name="character_run" type="Node3D" unique_id=1773396158]
 
 [node name="Armature" type="Node3D" parent="." unique_id=868295984]
+<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0006120404, 0)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00560222, 0)
+>>>>>>> Stashed changes
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature" unique_id=837139878]
 bones/0/name = "Bone"
@@ -496,21 +518,33 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 0, 0)
+<<<<<<< Updated upstream
 bones/0/rotation = Quaternion(-0.057735324, 3.4137576e-19, 4.227625e-18, 0.99833196)
+=======
+bones/0/rotation = Quaternion(-0.056134667, 0, 8.621987e-18, 0.9984233)
+>>>>>>> Stashed changes
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Bone.001"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60203785, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 0.60203785, 0)
+<<<<<<< Updated upstream
 bones/1/rotation = Quaternion(0.057628967, -3.5343005e-19, -4.003439e-18, 0.9983381)
+=======
+bones/1/rotation = Quaternion(0.05520635, -7.696856e-26, -8.477862e-18, 0.99847496)
+>>>>>>> Stashed changes
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65971833, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 0.65971833, 0)
+<<<<<<< Updated upstream
 bones/2/rotation = Quaternion(0.0389006, 1.4498288e-19, -2.990667e-18, 0.99924314)
+=======
+bones/2/rotation = Quaternion(0.036813557, -8.0100277e-26, -5.872833e-18, 0.9993222)
+>>>>>>> Stashed changes
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "sholder.r"
 bones/3/parent = 2
@@ -524,14 +558,22 @@ bones/4/parent = 3
 bones/4/rest = Transform3D(0.45749348, 0.88921297, 2.525897e-07, -0.88921297, 0.45749348, -8.3058424e-08, -1.8941478e-07, -1.8660735e-07, 1, 0, 0.6463907, 0)
 bones/4/enabled = true
 bones/4/position = Vector3(0, 0.6463907, 0)
+<<<<<<< Updated upstream
 bones/4/rotation = Quaternion(0.07785704, -0.04063146, -0.6552308, 0.75030667)
+=======
+bones/4/rotation = Quaternion(0.072180025, -0.034132503, -0.65588045, 0.75063026)
+>>>>>>> Stashed changes
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "forarm.r"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.99980766, 0.01961175, 4.7113576e-07, -0.01961175, 0.99980766, -1.10738005e-08, -4.7126235e-07, 1.8318751e-09, 1, 1.9095836e-14, 1.0341814, -7.1054274e-15)
 bones/5/enabled = true
 bones/5/position = Vector3(1.9095836e-14, 1.0341814, -7.1054274e-15)
+<<<<<<< Updated upstream
 bones/5/rotation = Quaternion(0.15315981, -0.01847419, 0.00014060843, 0.9880288)
+=======
+bones/5/rotation = Quaternion(0.1734039, -0.020916065, 0.0014732641, 0.9846276)
+>>>>>>> Stashed changes
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "neck"
 bones/6/parent = 2
@@ -545,7 +587,11 @@ bones/7/parent = 6
 bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52644205, 0)
 bones/7/enabled = true
 bones/7/position = Vector3(0, 0.52644205, 0)
+<<<<<<< Updated upstream
 bones/7/rotation = Quaternion(-0.08828407, -9.087983e-19, 6.944525e-18, 0.99609536)
+=======
+bones/7/rotation = Quaternion(-0.08580942, -2.6053516e-19, 1.15171765e-17, 0.9963116)
+>>>>>>> Stashed changes
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "sholder.l"
 bones/8/parent = 2
@@ -559,14 +605,22 @@ bones/9/parent = 8
 bones/9/rest = Transform3D(0.45749348, -0.88921297, -2.525897e-07, 0.88921297, 0.45749348, -8.3058424e-08, 1.8941478e-07, -1.8660735e-07, 1, 0, 0.6463907, 0)
 bones/9/enabled = true
 bones/9/position = Vector3(0, 0.6463907, 0)
+<<<<<<< Updated upstream
 bones/9/rotation = Quaternion(-0.010378146, -0.10245125, 0.67504805, 0.73055196)
+=======
+bones/9/rotation = Quaternion(-0.01473061, -0.10715972, 0.6749671, 0.7298763)
+>>>>>>> Stashed changes
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "forarm.l"
 bones/10/parent = 9
 bones/10/rest = Transform3D(0.99980766, -0.01961175, -4.7113576e-07, 0.01961175, 0.99980766, -1.10738005e-08, 4.7126235e-07, 1.8318751e-09, 1, -1.9095836e-14, 1.0341814, -7.1054274e-15)
 bones/10/enabled = true
 bones/10/position = Vector3(-1.9095836e-14, 1.0341814, -7.1054274e-15)
+<<<<<<< Updated upstream
 bones/10/rotation = Quaternion(0.21855119, 0.010005384, -0.019682331, 0.97557575)
+=======
+bones/10/rotation = Quaternion(0.22287998, 0.010359311, -0.020264419, 0.9745802)
+>>>>>>> Stashed changes
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/name = "hip.r"
 bones/11/parent = -1
@@ -580,21 +634,33 @@ bones/12/parent = 11
 bones/12/rest = Transform3D(1, 0, -7.549791e-08, 7.549791e-08, 0, 1, 0, -1, 0, 0, 0.21990612, 0)
 bones/12/enabled = true
 bones/12/position = Vector3(0, 0.21990612, 0)
+<<<<<<< Updated upstream
 bones/12/rotation = Quaternion(-0.70447725, 0.0609249, 0.06092495, 0.70447725)
+=======
+bones/12/rotation = Quaternion(-0.704853, 0.056411278, 0.05641133, 0.704853)
+>>>>>>> Stashed changes
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "calf.r"
 bones/13/parent = 12
 bones/13/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3242347, 0)
 bones/13/enabled = true
 bones/13/position = Vector3(0, 1.3242347, 0)
+<<<<<<< Updated upstream
 bones/13/rotation = Quaternion(1.2452646e-09, 3.090186e-15, 0.018200835, 0.9998344)
+=======
+bones/13/rotation = Quaternion(8.552893e-09, 4.7470615e-15, 0.03145835, 0.99950516)
+>>>>>>> Stashed changes
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "foot.r"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0, 1, 7.5497894e-08, -1, 0, 1.6292068e-07, 1.6292068e-07, -7.5497894e-08, 1, 0, 1.3434265, 0)
 bones/14/enabled = true
 bones/14/position = Vector3(0, 1.3434265, 0)
+<<<<<<< Updated upstream
 bones/14/rotation = Quaternion(-9.218984e-08, -2.7776233e-08, -0.7743139, 0.63280183)
+=======
+bones/14/rotation = Quaternion(-9.843378e-08, -2.1854888e-08, -0.7792548, 0.62670726)
+>>>>>>> Stashed changes
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "hip.l"
 bones/15/parent = -1
@@ -608,14 +674,22 @@ bones/16/parent = 15
 bones/16/rest = Transform3D(1, 0, 7.549791e-08, -7.549791e-08, 0, 1, 0, -1, 0, 0, 0.21990612, 0)
 bones/16/enabled = true
 bones/16/position = Vector3(0, 0.21990612, 0)
+<<<<<<< Updated upstream
 bones/16/rotation = Quaternion(-0.69423074, 0.13432668, 0.1343266, 0.69423074)
+=======
+bones/16/rotation = Quaternion(-0.69389, 0.13607584, 0.13607578, 0.6938901)
+>>>>>>> Stashed changes
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/name = "calf.l"
 bones/17/parent = 16
 bones/17/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3242347, 0)
 bones/17/enabled = true
 bones/17/position = Vector3(0, 1.3242347, 0)
+<<<<<<< Updated upstream
 bones/17/rotation = Quaternion(1.6376577e-08, 9.718538e-16, -0.21785575, 0.975981)
+=======
+bones/17/rotation = Quaternion(1.934489e-08, -6.827287e-15, -0.22300577, 0.9748172)
+>>>>>>> Stashed changes
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/name = "foot.l"
 bones/18/parent = 17

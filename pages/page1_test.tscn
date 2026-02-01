@@ -65,6 +65,7 @@ uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall3" unique_id=1497956169]
 shape = SubResource("RectangleShape2D_woo8u")
+<<<<<<< Updated upstream
 
 [node name="PageWall4" type="StaticBody2D" parent="." unique_id=803167283]
 position = Vector2(1627, 684)
@@ -88,3 +89,5 @@ metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole" unique_id=207306761]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_fu7iq")
+=======
+>>>>>>> Stashed changes
