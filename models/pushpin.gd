@@ -28,4 +28,5 @@ func _process(delta: float) -> void:
 		rotation = inital_rot + Vector3(drop_pos*2.0, 0, 0)
 		
 	if remove_time > 2.0:
+		print_debug()
 		queue_free()

@@ -1,8 +1,8 @@
 extends Node3D
 
 @export var pins: Array[Node3D]
-@export var label: Label3D
 @export var pickup_dist = 1.0
+@export var ui_pins: Array[TextureRect]
 
 func _process(delta: float) -> void:
 	var pin_num = 0
@@ -14,4 +14,9 @@ func _process(delta: float) -> void:
 				
 			pin.pickup_dist = pickup_dist
 	
-	label.text = str(pin_num)
+	for pin_index in range(ui_pins.size()):
+		if ui_pins[pin_index] != null:
+			if pin_index<pin_num:
+				ui_pins[pin_index].position.y = 29.0
+			else: 
+				ui_pins[pin_index].position.y = -129.0
