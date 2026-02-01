@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_be057"]
 [ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_be057"]
-[ext_resource type="Script" uid="uid://kkwfgmfe4la0" path="res://page_background.gd" id="2_o8wol"]
 [ext_resource type="Texture2D" uid="uid://cqemjdg0ujnfs" path="res://patterns/psttern_3.png" id="3_0svsi"]
 [ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="4_gm8eh"]
 
@@ -21,12 +20,8 @@ height = 606.58
 
 [node name="Page1Test" type="Node2D" unique_id=1877032122]
 script = ExtResource("1_be057")
+page_background = ExtResource("3_0svsi")
 metadata/_custom_type_script = "uid://1t6pghxubui0"
-
-[node name="PageBackground" type="Node2D" parent="." unique_id=1058938801]
-script = ExtResource("2_o8wol")
-page_texture = ExtResource("3_0svsi")
-metadata/_custom_type_script = "uid://kkwfgmfe4la0"
 
 [node name="PageWall" type="StaticBody2D" parent="." unique_id=1622899687]
 position = Vector2(837, 1014)

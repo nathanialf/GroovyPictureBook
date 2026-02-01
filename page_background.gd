@@ -49,15 +49,16 @@ func __update_material_texture() -> void:
 	__page_material.set_shader_parameter("page_tex", page_texture)
 	__polygon.texture = page_texture
 	
-	var tex_size := page_texture.get_size()
-	var uv_w := 1920 * (tex_size.x / 1920) * 2
-	var uv_h := 1080 * (tex_size.y / 1080) * 2
-	var uv := PackedVector2Array()
-	uv.append(Vector2(0, 0))
-	uv.append(Vector2(uv_w, 0))
-	uv.append(Vector2(uv_w, uv_h))
-	uv.append(Vector2(0, uv_h))
-	__polygon.uv = uv
+	if page_texture:
+		var tex_size := page_texture.get_size()
+		var uv_w := tex_size.x * 2
+		var uv_h := tex_size.y * 2
+		var uv := PackedVector2Array()
+		uv.append(Vector2(0, 0))
+		uv.append(Vector2(uv_w, 0))
+		uv.append(Vector2(uv_w, uv_h))
+		uv.append(Vector2(0, uv_h))
+		__polygon.uv = uv
 
 func get_page() -> Page:
 	return get_parent()
