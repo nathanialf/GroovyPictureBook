@@ -5,9 +5,10 @@
 [ext_resource type="Script" path="res://camera.gd" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
-[ext_resource type="Script" uid="uid://hgctsa5inf0p" path="res://target_animation.gd" id="4_j5wjh"]
-[ext_resource type="Script" uid="uid://8hn2y811b0n8" path="res://target_animation_config.gd" id="5_j5wjh"]
+[ext_resource type="Script" path="res://target_animation.gd" id="4_j5wjh"]
+[ext_resource type="Script" path="res://target_animation_config.gd" id="5_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://dkcbw3cmj3bv3" path="res://models/pushpin.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://b3bmcwcs6wp1k" path="res://pages/page 3.tscn" id="8_hve3p"]
 [ext_resource type="Script" uid="uid://btf4vy1tqv2el" path="res://models/pushpin_managers.gd" id="9_hve3p"]
 [ext_resource type="AudioStream" uid="uid://coqy6et1rom4g" path="res://music/groovy picture book combined.mp3" id="10_hve3p"]
 
@@ -45,7 +46,7 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0.01)
 transform = Transform3D(-5.2453664e-09, 0, 0.12, 0, 0.12, 0, -0.12, 0, -5.2453664e-09, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=10132499]
-transform = Transform3D(1, 0, 0, 0, 0.9837067, 0.1797809, 0, -0.1797809, 0.9837067, 0, 0.4850288, 2.091046)
+transform = Transform3D(1, 0, 0, 0, 0.9837067, 0.1797809, 0, -0.1797809, 0.9837067, -0.0009895563, 0.48700434, 2.0908294)
 current = true
 fov = 22.3
 size = 1.3631029
@@ -66,7 +67,7 @@ shadow_enabled = true
 [node name="Pages" type="Node3D" parent="." unique_id=1936395579]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 0)
 script = SubResource("GDScript_hve3p")
-page_scenes = Array[PackedScene]([ExtResource("3_fc0e3"), ExtResource("4_7jktm")])
+page_scenes = Array[PackedScene]([ExtResource("3_fc0e3"), ExtResource("4_7jktm"), ExtResource("8_hve3p")])
 
 [node name="pushpin_manager" type="Node3D" parent="." unique_id=1200090941 node_paths=PackedStringArray("pins", "label")]
 script = ExtResource("9_hve3p")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b3bmcwcs6wp1k"]
+
+[ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_layix"]
+[ext_resource type="Texture2D" uid="uid://cda1t2ade1sxa" path="res://patterns/pattern_2.jpg" id="2_pn8t7"]
+[ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="3_2gsvh"]
+[ext_resource type="Script" uid="uid://c0rr1uk6yfw5x" path="res://page_wall_simple.gd" id="4_vquol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f17re"]
+size = Vector2(264, 211)
+
+[node name="Page3" type="Node2D" unique_id=255156775]
+script = ExtResource("1_layix")
+page_color = Color(0, 0.10000014, 1, 1)
+page_background = ExtResource("2_pn8t7")
+metadata/_custom_type_script = "uid://1t6pghxubui0"
+
+[node name="PageHole" type="Area2D" parent="." unique_id=1062843392]
+script = ExtResource("3_2gsvh")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole" unique_id=595429580]
+position = Vector2(279, 906)
+shape = SubResource("RectangleShape2D_f17re")
+
+[node name="PageWallSimple" type="StaticBody2D" parent="." unique_id=1471754669]
+position = Vector2(508, 820)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
