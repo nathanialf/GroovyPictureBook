@@ -1,27 +1,18 @@
 [gd_scene format=3 uid="uid://hfxaq8puq6qn"]
 
-
 [ext_resource type="Script" uid="uid://f8lbekpwdsgs" path="res://player_character.gd" id="1_02ohv"]
-
-[ext_resource type="Script" uid="uid://c7ofv6ismw7si" path="res://player_character.gd" id="1_02ohv"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02ohv"]
 size = Vector2(48, 72)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2108810901]
 script = ExtResource("1_02ohv")
-
-
-wall_jump_force = Vector2(1200, 1200)
-
-movement_weight = 7.0
 gravity_acceleration = 24.0
-sliding_acceleration = 16.8
-move_speed = 288
-jump_force = 576
-wall_jump_force = Vector2(528, 432)
-movement_weight = 3.36
+sliding_acceleration = 5.0
+move_speed = 295
+jump_force = 578
+wall_jump_force = Vector2(540, 440)
+movement_weight = 3.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556107828]
 shape = SubResource("RectangleShape2D_02ohv")
