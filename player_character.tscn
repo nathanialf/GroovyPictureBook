@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://f8lbekpwdsgs" path="res://player_character.gd" id="1_02ohv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02ohv"]
-size = Vector2(150, 150)
+size = Vector2(100, 150)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2108810901]
 script = ExtResource("1_02ohv")

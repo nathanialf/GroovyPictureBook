@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var gravity_acceleration := 50.0
+@export var sliding_acceleration := 35.0
 @export var move_speed := 600
 @export var jump_force := 1200
 @export var wall_jump_force := Vector2(1100,-900)
@@ -16,6 +17,7 @@ var turn_animation_reset = 0.0
 var player_angle = 90.0
 var player_angle_target = 90.0
 var wall_jump_period = 0.0
+var in_air_timer = 0.0
 
 var can_walljump_left = true
 var can_walljump_right = true
@@ -33,7 +35,6 @@ func _ready() -> void:
 
 	player_obj = get_node("/root/Game/PlayerSprite/character_run")
 	player_animator = player_obj.get_node("AnimationTree")
-
 func _physics_process(delta: float) -> void:
 	var move_input := Input.get_vector(\
 		"Move left", "Move right", "Nothing", "Nothing")
@@ -41,11 +42,6 @@ func _physics_process(delta: float) -> void:
 	var walljump_move_restrict = clamp((wall_jump_period)*-5.0, 0.0, 1.0)
 	velocity.x += (move_input.x * move_speed)*0.3*walljump_move_restrict
 	
-	if wall_jump_period < 0:
-		velocity.x *= (1-(delta*movement_weight))
-		velocity.x = clamp(velocity.x, -move_speed, move_speed)
-	else: 
-		velocity.x *= (1-(delta*(movement_weight/2.0)))
 	
 	var movement_speed = clamp(abs(velocity.x)/600.0, 0.0, 1.0)
 	player_animator.set("parameters/StateMachine/BlendTree/Blend2/blend_amount", movement_speed)
@@ -69,6 +65,19 @@ func _physics_process(delta: float) -> void:
 	jump_animation_reset -= delta
 	turn_animation_reset -= delta
 	wall_jump_period -= delta
+	in_air_timer -= delta
+	
+	if in_air_timer > 0.01:
+		player_animator.set("parameters/StateMachine/conditions/in_air", true)
+		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
+	else:
+		player_animator.set("parameters/StateMachine/conditions/in_air", false)
+		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
+		
+		
+	
+	if wall_jump_period < 0:
+		player_animator.set("parameters/StateMachine/conditions/jump_off", false)
 	
 	if turn_animation_reset < 0.0:
 		player_animator.set("parameters/StateMachine/conditions/turn", false)
@@ -78,24 +87,53 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
 		
-	if !is_on_floor():
-		velocity.y += gravity_acceleration
-	else:
-		player_animator.set("parameters/StateMachine/conditions/jump_end", true)
-		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
-		
-	
 	var space_state = get_world_2d().direct_space_state
-	var left_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(-100.0, 0.0))
+	var left_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(-80.0, 0.0))
 	var left_wall_result = space_state.intersect_ray(left_wall_query)
 	var walljump_left_emable = can_walljump_left && left_wall_result
-	var right_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(100.0, 0.0))
+	var right_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(80.0, 0.0))
 	var right_wall_result = space_state.intersect_ray(right_wall_query)
 	var walljump_right_emable = can_walljump_right && right_wall_result
+	
+	if !is_on_floor():		
+		if (left_wall_result or right_wall_result) and velocity.y > 0:
+			velocity.y += sliding_acceleration 
+		else:
+			velocity.y += gravity_acceleration
+			
+		if in_air_timer < 0.0:
+			in_air_timer = 0.0
+		in_air_timer += delta*2.0
+	else:
+		player_animator.set("parameters/StateMachine/conditions/in_air", false)
+		player_animator.set("parameters/StateMachine/conditions/jump_end", true)
+		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
+
+	if wall_jump_period < 0:
+		velocity.x *= (1-(delta*movement_weight))
+		velocity.x = clamp(velocity.x, -move_speed, move_speed)
+	else: 
+		velocity.x *= (1-(delta*(movement_weight/2.0)))
 
 	if is_on_floor():
 		can_walljump_left = true
 		can_walljump_right = true
+		
+		player_animator.set("parameters/StateMachine/conditions/wall_hug", false)
+		player_animator.set("parameters/StateMachine/conditions/wall_hug_right", false)
+	else:
+		if left_wall_result:
+			player_animator.set("parameters/StateMachine/conditions/wall_hug", true)
+		elif right_wall_result:
+			player_animator.set("parameters/StateMachine/conditions/wall_hug_right", true)
+		else:
+			player_animator.set("parameters/StateMachine/conditions/wall_hug", false)
+			player_animator.set("parameters/StateMachine/conditions/wall_hug_right", false)
+		
+	if (not left_wall_result) and (not right_wall_result):
+		player_animator.set("parameters/StateMachine/conditions/clear_walljump", true)
+	else:
+		player_animator.set("parameters/StateMachine/conditions/clear_walljump", false)
 		
 	
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
@@ -115,10 +153,11 @@ func _physics_process(delta: float) -> void:
 			can_walljump_left = true
 			can_walljump_right = false
 		
-		player_animator.set("parameters/StateMachine/conditions/jump_start", true)
-		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
+		player_animator.set("parameters/StateMachine/conditions/jump_off", true)
+		player_animator.set("parameters/StateMachine/conditions/wall_hug", false)
+		player_animator.set("parameters/StateMachine/conditions/wall_hug_right", false)
 		jump_animation_reset = 0.1
-		wall_jump_period = 0.2
+		wall_jump_period = 0.1
 		
 	
 	move_and_slide()
