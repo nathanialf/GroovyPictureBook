@@ -73,15 +73,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_animator.set("parameters/StateMachine/conditions/in_air", false)
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
-		
-		
-	
-	if wall_jump_period < 0:
-		player_animator.set("parameters/StateMachine/conditions/jump_off", false)
-	
-	if wall_jump_period < 0:
-		player_animator.set("parameters/StateMachine/conditions/jump_off", false)
-	
+
 	if wall_jump_period < 0:
 		player_animator.set("parameters/StateMachine/conditions/jump_off", false)
 	
@@ -92,12 +84,6 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 	else:
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
-
-	if !is_on_floor():
-		velocity.y += gravity_acceleration
-	else:
-		player_animator.set("parameters/StateMachine/conditions/jump_end", true)
-		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 
 	var space_state = get_world_2d().direct_space_state
 	var left_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(-80.0, 0.0))
@@ -149,11 +135,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		player_animator.set("parameters/StateMachine/conditions/clear_walljump", false)
 
-
-
-
-		
-	
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = -jump_force
 		player_animator.set("parameters/StateMachine/conditions/jump_start", true)
