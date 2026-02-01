@@ -37,7 +37,8 @@ func _init() -> void:
 	add_child(__hole_test_body)
 
 func _process(delta: float) -> void:
-	__hole_test_body.position = $"../../../../".active_page.get_player_position()
+	if !Engine.is_editor_hint():
+		__hole_test_body.position = $"../../../../".active_page.get_player_position()
 
 func test_is_near_hole() -> bool:
 	for hole in get_all_holes():
