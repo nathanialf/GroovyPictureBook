@@ -7,6 +7,13 @@ extends Node2D
 @export var page_background: Texture2D:
 	set(value): __page_background.page_texture = value
 	get(): return __page_background.page_texture
+@export var page_move_speed_scalar: float = 1.0
+@export var page_jump_force_scalar: float = 1.0
+@export var page_wall_jump_force_scalar: float = 1.0
+@export var page_movement_weight_air_scalar: float = 1.0
+@export var page_movement_weight_ground_scalar: float = 1.0
+@export var page_sliding_acceleration_scalar: float = 1.0
+@export var page_gravity_acceleration_scalar: float = 1.0
 
 var __player_character: CharacterBody2D
 var __page_background := PageBackground.new()
@@ -74,3 +81,24 @@ class PagePlayerState:
 
 	var position: Vector2
 	var velocity: Vector2
+
+func get_jump_force_scalar() -> float:
+	return page_jump_force_scalar
+
+func get_wall_jump_force_scalar() -> float:
+	return page_wall_jump_force_scalar
+
+func get_move_speed_scalar() -> float:
+	return page_move_speed_scalar
+	
+func get_movement_weight_air_scalar() -> float:
+	return page_movement_weight_air_scalar
+	
+func get_movement_weight_ground_scalar() -> float:
+	return page_movement_weight_ground_scalar
+
+func get_sliding_acceleration_scalar() -> float:
+	return page_sliding_acceleration_scalar
+	
+func get_gravity_acceleration_scalar() -> float:
+	return page_gravity_acceleration_scalar

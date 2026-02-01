@@ -43,8 +43,7 @@ func _physics_process(delta: float) -> void:
 		"Move left", "Move right", "Nothing", "Nothing")
 		
 	var walljump_move_restrict = clamp((wall_jump_period)*-5.0, 0.0, 1.0)
-	velocity.x += (move_input.x * move_speed)*0.3*walljump_move_restrict
-	
+	velocity.x += (move_input.x * (move_speed*page.get_move_speed_scalar())*0.3*walljump_move_restrict)	
 	
 	var movement_speed = clamp(abs(velocity.x)/300.0, 0.0, 1.0)
 	player_animator.set("parameters/StateMachine/BlendTree/Blend2/blend_amount", movement_speed)
@@ -104,10 +103,10 @@ func _physics_process(delta: float) -> void:
 	
 	if !is_on_floor():		
 		if (left_wall_result or right_wall_result) and velocity.y > 0:
-			velocity.y += sliding_acceleration 
+			velocity.y += sliding_acceleration*page.get_sliding_acceleration_scalar()
 		else:
 			if !__is_hang_time():
-				velocity.y += gravity_acceleration
+				velocity.y += gravity_acceleration*page.get_gravity_acceleration_scalar()
 			else:
 				velocity.y = 0
 				velocity.x = 0
@@ -122,16 +121,16 @@ func _physics_process(delta: float) -> void:
 
 	if wall_jump_period < 0:
 		if is_on_floor():
-			velocity.x *= (1-(delta*movement_weight_ground))
+			velocity.x *= (1-(delta*(movement_weight_ground*page.get_movement_weight_ground_scalar())))
 		else:
-			velocity.x *= (1-(delta*movement_weight_air))
+			velocity.x *= (1-(delta*(movement_weight_air*page.get_movement_weight_air_scalar())))
 			
-		velocity.x = clamp(velocity.x, -move_speed, move_speed)
+		velocity.x = clamp(velocity.x, -move_speed*page.get_move_speed_scalar(), move_speed*page.get_move_speed_scalar())
 	else: 
 		if is_on_floor():
-			velocity.x *= (1-(delta*movement_weight_ground/2.0))
+			velocity.x *= (1-(delta*(movement_weight_ground*page.get_movement_weight_ground_scalar())/2.0))
 		else:
-			velocity.x *= (1-(delta*movement_weight_air/2.0))
+			velocity.x *= (1-(delta*(movement_weight_air*page.get_movement_weight_air_scalar())/2.0))
 
 	if is_on_floor():
 		can_walljump_left = true
@@ -154,19 +153,19 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/clear_walljump", false)
 
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
-		velocity.y = -jump_force
+		velocity.y = -jump_force*page.get_jump_force_scalar()
 		player_animator.set("parameters/StateMachine/conditions/jump_start", true)
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
 		jump_animation_reset = 0.1
 
 	elif Input.is_action_just_pressed("Jump") && (walljump_left_emable || walljump_right_emable):
 		if walljump_left_emable:
-			velocity = wall_jump_force
+			velocity = wall_jump_force*page.get_wall_jump_force_scalar()
 			velocity.y *= -1.0
 			can_walljump_left = false
 			can_walljump_right = true
 		else:
-			velocity = wall_jump_force
+			velocity = wall_jump_force*page.get_wall_jump_force_scalar()
 			velocity.x *= -1.0
 			velocity.y *= -1.0
 			can_walljump_left = true
