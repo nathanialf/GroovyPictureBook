@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x += (move_input.x * move_speed)*0.3*walljump_move_restrict
 	
 	
-	var movement_speed = clamp(abs(velocity.x)/600.0, 0.0, 1.0)
+	var movement_speed = clamp(abs(velocity.x)/300.0, 0.0, 1.0)
 	player_animator.set("parameters/StateMachine/BlendTree/Blend2/blend_amount", movement_speed)
 	
 	if velocity.x > 0.1:

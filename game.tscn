@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
-[ext_resource type="Script" uid="uid://fem0shj6kr8h" path="res://camera.gd" id="3_eow3j"]
+[ext_resource type="Script" path="res://camera.gd" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
-[ext_resource type="PackedScene" path="res://pages/page2_test.tscn" id="4_7jktm"]
+[ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bc75yp3eue6b0" path="res://page3d.tscn" id="4_fc0e3"]
-[ext_resource type="Script" uid="uid://hgctsa5inf0p" path="res://target_animation.gd" id="4_j5wjh"]
-[ext_resource type="Script" uid="uid://8hn2y811b0n8" path="res://target_animation_config.gd" id="5_j5wjh"]
+[ext_resource type="Script" path="res://target_animation.gd" id="4_j5wjh"]
+[ext_resource type="Script" path="res://target_animation_config.gd" id="5_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://dkcbw3cmj3bv3" path="res://models/pushpin.tscn" id="6_ryrav"]
+[ext_resource type="Script" uid="uid://btf4vy1tqv2el" path="res://models/pushpin_managers.gd" id="9_hve3p"]
 
 [sub_resource type="Resource" id="Resource_vef74"]
 script = ExtResource("5_j5wjh")
@@ -40,12 +42,10 @@ script = ExtResource("3_eow3j")
 [node name="XTargetAnimation" type="Node" parent="Camera3D" unique_id=931201905]
 script = ExtResource("4_j5wjh")
 config = SubResource("Resource_vef74")
-metadata/_custom_type_script = "uid://hgctsa5inf0p"
 
 [node name="YTargetAnimation" type="Node" parent="Camera3D" unique_id=753444433]
 script = ExtResource("4_j5wjh")
 config = SubResource("Resource_j5wjh")
-metadata/_custom_type_script = "uid://hgctsa5inf0p"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073432316]
 transform = Transform3D(0.9114464, 0.32436162, -0.253091, -0.29250705, 0.94348896, 0.15578246, 0.2893184, -0.06795648, 0.95481765, 0, 0, 0)
@@ -59,3 +59,19 @@ page_scene = ExtResource("3_fc0e3")
 
 [node name="Page3D2" parent="Pages" unique_id=187844261 instance=ExtResource("4_fc0e3")]
 page_scene = ExtResource("4_7jktm")
+
+[node name="pushpin_manager" type="Node3D" parent="." unique_id=1200090941 node_paths=PackedStringArray("pins", "label")]
+script = ExtResource("9_hve3p")
+pins = [NodePath("pushpin"), NodePath(""), NodePath("pushpin3")]
+label = NodePath("Label3D")
+pickup_dist = 0.1
+
+[node name="pushpin" parent="pushpin_manager" unique_id=65536298 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.3237479, -0.51593393, 0.051739097)
+player = NodePath("../../PlayerSprite")
+
+[node name="pushpin3" parent="pushpin_manager" unique_id=285274198 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.6406991, -0.6446243, 0.051738977)
+player = NodePath("../../PlayerSprite")
+
+[node name="Label3D" type="Label3D" parent="pushpin_manager" unique_id=251886436]
