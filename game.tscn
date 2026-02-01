@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
-[ext_resource type="Script" uid="uid://fem0shj6kr8h" path="res://camera.gd" id="3_eow3j"]
+[ext_resource type="Script" path="res://camera.gd" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://hgctsa5inf0p" path="res://target_animation.gd" id="4_j5wjh"]
 [ext_resource type="Script" uid="uid://8hn2y811b0n8" path="res://target_animation_config.gd" id="5_j5wjh"]
 [ext_resource type="PackedScene" uid="uid://dkcbw3cmj3bv3" path="res://models/pushpin.tscn" id="6_ryrav"]
 [ext_resource type="Script" uid="uid://btf4vy1tqv2el" path="res://models/pushpin_managers.gd" id="9_hve3p"]
+[ext_resource type="AudioStream" uid="uid://coqy6et1rom4g" path="res://music/groovy picture book combined.mp3" id="10_hve3p"]
 
 [sub_resource type="Resource" id="Resource_vef74"]
 script = ExtResource("5_j5wjh")
@@ -82,3 +83,7 @@ transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.742277
 player = NodePath("../../PlayerSprite")
 
 [node name="Label3D" type="Label3D" parent="pushpin_manager" unique_id=251886436]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1268595945]
+stream = ExtResource("10_hve3p")
+autoplay = true
