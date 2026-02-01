@@ -120,7 +120,10 @@ func __all_pages() -> Array[Page]:
 	result.append_array(__all_page3ds().map(func(page3d): return page3d.page))
 	return result
 
+func index_of_page(page: Page) -> int:
+	return __all_pages().find(page)
+
 func __all_page3ds() -> Array[Node3D]:
 	var result: Array[Node3D] = []
-	result.append_array($Pages.get_children())
+	result.append_array($Pages.get_children().filter(func(child): return child is Page3D))
 	return result

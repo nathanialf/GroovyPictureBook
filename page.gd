@@ -71,6 +71,11 @@ func set_player_state(player_state: PagePlayerState) -> void:
 func get_player_character() -> CharacterBody2D:
 	return __player_character
 
+func get_all_walls() -> Array[PageWall]:
+	var result: Array[PageWall] = []
+	result.append_array(get_children().filter(func(child): return child is PageWall))
+	return result
+
 func get_all_holes() -> Array[PageHole]:
 	var result: Array[PageHole] = []
 	result.append_array(get_children().filter(func(child): return child is PageHole))

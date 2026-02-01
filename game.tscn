@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
-[ext_resource type="Script" path="res://camera.gd" id="3_eow3j"]
+[ext_resource type="Script" uid="uid://fem0shj6kr8h" path="res://camera.gd" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="Script" path="res://target_animation.gd" id="4_j5wjh"]
@@ -33,6 +33,32 @@ func _ready() -> void:
 		var page_3d: Page3D = preload(\"res://page3d.tscn\").instantiate()
 		page_3d.page_scene = page_scene
 		add_child(page_3d)
+		
+		if !page_3d.is_node_ready(): await page_3d.ready
+		var page := page_3d.page
+		var outline_projector := preload(\"res://outline_projector.tscn\").instantiate()
+		outline_projector.origin_node = %PageProjectorOrigin
+		outline_projector.page = page
+		add_child(outline_projector)
+		
+		get_parent().active_page_changed.connect(
+			func(active_page: Page):
+				var active_page_index: int = get_parent().active_page_index
+				var page_index: int = get_parent().index_of_page(page)
+				if page_index == active_page_index - 1:
+					outline_projector.start_casting()
+				else:
+					outline_projector.stop_casting()
+		)
+"
+
+[sub_resource type="GDScript" id="GDScript_mfdv2"]
+script/source = "extends Node2D
+
+func _draw() -> void:
+	var projector = $\"../Pages/OutlineProjector\"
+	var tex: Texture2D = projector.__outline_viewport.get_texture()
+	draw_texture(tex, Vector2.ZERO)
 "
 
 [node name="Game" type="Node3D" unique_id=519886471]
@@ -190,3 +216,10 @@ offset_right = -1101.0
 offset_bottom = 129.0
 texture = ExtResource("11_mfdv2")
 expand_mode = 1
+[node name="PageProjectorOrigin" type="Node3D" parent="." unique_id=1276404290]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 5)
+
+[node name="DebugThing" type="Node2D" parent="." unique_id=1209670247]
+visible = false
+script = SubResource("GDScript_mfdv2")

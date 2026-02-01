@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://biwu6sl8c3co7"]
+
+[ext_resource type="Script" uid="uid://c1r1awq4c3sdj" path="res://outline_projector.gd" id="1_1sfws"]
+
+[sub_resource type="Gradient" id="Gradient_1sfws"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k1spa"]
+gradient = SubResource("Gradient_1sfws")
+
+[node name="OutlineProjector" type="SpotLight3D" unique_id=1819928803]
+light_energy = 2.0
+light_projector = SubResource("GradientTexture1D_k1spa")
+light_specular = 11.953
+shadow_enabled = true
+spot_range = 20.0
+spot_attenuation = 0.0
+spot_angle = 10.86
+script = ExtResource("1_1sfws")
