@@ -139,7 +139,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		#print_debug(left_wall_result)
 		if left_wall_result:
-			player_animator.set("parameters/StateMachine/conditions/wall_hug_right", true)
+			player_animator.set("parameters/StateMachine/conditions/wall_hug", true)
 			player_angle_target = -90
 		elif right_wall_result:
 			player_animator.set("parameters/StateMachine/conditions/wall_hug", true)
@@ -177,11 +177,6 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/wall_hug_right", false)
 		jump_animation_reset = 0.1
 		wall_jump_period = 0.1
-		
-	print_debug(str(player_animator.get("parameters/StateMachine/conditions/wall_hug_right")) + " " + \
-	str(player_animator.get("parameters/StateMachine/conditions/wall_hug")) + " " + \
-	str(player_animator.get("parameters/StateMachine/conditions/jump_off")) + " " + \
-	str(player_animator.get("parameters/StateMachine/conditions/in_air")))
 	
 	move_and_slide()
 
