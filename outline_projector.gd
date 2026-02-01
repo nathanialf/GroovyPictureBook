@@ -75,15 +75,16 @@ class _OutlineDrawer:
 
 				var child_xform := Transform2D(child.rotation, child.position * shape_scale)
 				draw_set_transform_matrix(xform_no_scale * child_xform)
+				var combined_scale: Vector2 = shape_scale * child.scale
 
 				if shape is CircleShape2D:
-					draw_arc(Vector2.ZERO, shape.radius * shape_scale.x, 0, TAU, 32, page_color, OUTLINE_WIDTH, true)
+					draw_arc(Vector2.ZERO, shape.radius * combined_scale.x, 0, TAU, 32, page_color, OUTLINE_WIDTH, true)
 				elif shape is RectangleShape2D:
-					var scaled_size: Vector2 = shape.size * shape_scale
+					var scaled_size: Vector2 = shape.size * combined_scale
 					draw_rect(Rect2(-scaled_size * 0.5, scaled_size), page_color, false, OUTLINE_WIDTH, true)
 				elif shape is CapsuleShape2D:
-					var radius: float = shape.radius * shape_scale.x
-					var half_height: float = (shape.height * shape_scale.y) * 0.5
+					var radius: float = shape.radius * combined_scale.x
+					var half_height: float = (shape.height * combined_scale.y) * 0.5
 					var cap_offset: float = half_height - radius
 					draw_line(Vector2(-radius, -cap_offset), Vector2(-radius, cap_offset), page_color, OUTLINE_WIDTH)
 					draw_line(Vector2(radius, -cap_offset), Vector2(radius, cap_offset), page_color, OUTLINE_WIDTH)
