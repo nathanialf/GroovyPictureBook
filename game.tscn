@@ -23,7 +23,7 @@ fov = 29.3
 size = 1.3631029
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073432316]
-transform = Transform3D(0.9114464, 0.32436162, -0.253091, 0, 0.6151662, 0.78839743, 0.4114189, -0.718582, 0.560691, 0, 0, 0)
+transform = Transform3D(0.9114464, 0.32436162, -0.253091, -0.29250705, 0.94348896, 0.15578246, 0.2893184, -0.06795648, 0.95481765, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Pages" type="Node3D" parent="." unique_id=1936395579]
