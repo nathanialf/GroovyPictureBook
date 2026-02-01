@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_nl5ea"]
 [ext_resource type="Texture2D" uid="uid://cfqfiwroleg60" path="res://icon.svg" id="2_7tx1s"]
-[ext_resource type="Script" path="res://player.gd" id="2_phrhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tx1s"]
 size = Vector2(128, 128)
@@ -16,7 +15,6 @@ script = ExtResource("1_nl5ea")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1593429589]
 visible = false
 position = Vector2(717, 542)
-script = ExtResource("2_phrhr")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=214738131]
 texture = ExtResource("2_7tx1s")
