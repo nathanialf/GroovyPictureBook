@@ -18,6 +18,7 @@ var player_angle = 90.0
 var player_angle_target = 90.0
 var wall_jump_period = 0.0
 var in_air_timer = 0.0
+var hang_time_expiration = 0.0
 
 var can_walljump_left = true
 var can_walljump_right = true
@@ -97,7 +98,11 @@ func _physics_process(delta: float) -> void:
 		if (left_wall_result or right_wall_result) and velocity.y > 0:
 			velocity.y += sliding_acceleration 
 		else:
-			velocity.y += gravity_acceleration
+			if !__is_hang_time():
+				velocity.y += gravity_acceleration
+			else:
+				velocity.y = 0
+				velocity.x = 0
 			
 		if in_air_timer < 0.0:
 			in_air_timer = 0.0
@@ -126,8 +131,6 @@ func _physics_process(delta: float) -> void:
 			player_animator.set("parameters/StateMachine/conditions/wall_hug_right", true)
 		else:
 			player_animator.set("parameters/StateMachine/conditions/wall_hug", false)
-
-
 			player_animator.set("parameters/StateMachine/conditions/wall_hug_right", false)
 		
 	if (not left_wall_result) and (not right_wall_result):
@@ -168,3 +171,9 @@ func __activate_player() -> void:
 
 func __deactivate_player() -> void:
 	if get_parent(): page.remove_child(self)
+	
+func on_page_flip() -> void:
+	hang_time_expiration = Time.get_ticks_msec() + 1000
+
+func __is_hang_time() -> bool:
+	return !Time.get_ticks_msec() > hang_time_expiration

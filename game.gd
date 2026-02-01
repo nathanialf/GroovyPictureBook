@@ -108,6 +108,7 @@ func __flip_page_by(amount: int) -> bool:
 	active_page_index = new_page_index
 	active_page = new_page
 	__refresh_page_positions()
+	active_page.get_player_character().on_page_flip()
 	return true
 
 func __transfer_player_state(from_page: Page, to_page: Page) -> void:
