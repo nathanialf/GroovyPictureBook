@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var wall_jump_force := Vector2(1100,900)
 @export var movement_weight_air := 5.0
 @export var movement_weight_ground := 5.0
+@export var can_double_walljump := true
 
 var player_animator: AnimationTree 
 var player_obj: Node 
@@ -88,6 +89,10 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 	else:
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
+
+	if can_double_walljump:
+		can_walljump_left=true
+		can_walljump_right=true
 
 	var space_state = get_world_2d().direct_space_state
 	var left_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(-80.0, 0.0))
