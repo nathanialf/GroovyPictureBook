@@ -26,6 +26,13 @@ height = 606.58
 [node name="Page1Test" type="Node2D" unique_id=1877032122]
 script = ExtResource("1_be057")
 page_background = ExtResource("3_0svsi")
+page_move_speed_scalar = null
+page_jump_force_scalar = null
+page_wall_jump_force_scalar = null
+page_movement_weight_air_scalar = null
+page_movement_weight_ground_scalar = null
+page_sliding_acceleration_scalar = null
+page_gravity_acceleration_scalar = null
 metadata/_custom_type_script = "uid://1t6pghxubui0"
 
 [node name="PageWall" type="StaticBody2D" parent="." unique_id=1622899687]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
-[ext_resource type="Script" uid="uid://fem0shj6kr8h" path="res://camera.gd" id="3_eow3j"]
+[ext_resource type="Script" path="res://camera.gd" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="Script" path="res://target_animation.gd" id="4_j5wjh"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://btf4vy1tqv2el" path="res://models/pushpin_managers.gd" id="9_hve3p"]
 [ext_resource type="AudioStream" uid="uid://coqy6et1rom4g" path="res://music/groovy picture book combined.mp3" id="10_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bbdjy2kx388np" path="res://UI/pushpin.png" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://cs6iqsbiq7ea1" path="res://models/edge.tscn" id="12_iotsf"]
 
 [sub_resource type="Resource" id="Resource_vef74"]
 script = ExtResource("5_j5wjh")
@@ -86,6 +87,7 @@ config = SubResource("Resource_vef74")
 script = ExtResource("4_j5wjh")
 config = SubResource("Resource_j5wjh")
 
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073432316]
 transform = Transform3D(0.9114464, 0.32436162, -0.253091, -0.29250705, 0.94348896, 0.15578246, 0.2893184, -0.06795648, 0.95481765, 0, 0, 0)
 shadow_enabled = true
@@ -100,9 +102,12 @@ script = ExtResource("9_hve3p")
 pins = [NodePath("pushpin"), null, NodePath("pushpin3")]
 pickup_dist = 0.1
 ui_pins = [NodePath("../Control/pushpin_ui_control/ui_pushpin"), NodePath("../Control/pushpin_ui_control/ui_pushpin2"), NodePath("../Control/pushpin_ui_control/ui_pushpin3"), NodePath("../Control/pushpin_ui_control/ui_pushpin4"), NodePath("../Control/pushpin_ui_control/ui_pushpin5"), NodePath("../Control/pushpin_ui_control/ui_pushpin6"), NodePath("../Control/pushpin_ui_control/ui_pushpin7"), NodePath("../Control/pushpin_ui_control/ui_pushpin8"), NodePath("../Control/pushpin_ui_control/ui_pushpin9"), NodePath("../Control/pushpin_ui_control/ui_pushpin10")]
+player = NodePath("../PlayerSprite")
+edge_obj = NodePath("../edge")
+edge_obj_dist = 0.3
 
 [node name="pushpin" parent="pushpin_manager" unique_id=65536298 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
-transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.3237479, -0.51593393, 0.051739097)
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.2349168, -0.51593393, 0.051739097)
 player = NodePath("../../PlayerSprite")
 
 [node name="pushpin3" parent="pushpin_manager" unique_id=285274198 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
@@ -216,6 +221,7 @@ offset_right = -1101.0
 offset_bottom = 129.0
 texture = ExtResource("11_mfdv2")
 expand_mode = 1
+
 [node name="PageProjectorOrigin" type="Node3D" parent="." unique_id=1276404290]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 5)
@@ -223,3 +229,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 5)
 [node name="DebugThing" type="Node2D" parent="." unique_id=1209670247]
 visible = false
 script = SubResource("GDScript_mfdv2")
+
+[node name="edge" parent="." unique_id=2082557506 instance=ExtResource("12_iotsf")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.8053555, -0.5996835, 0.12254257)
