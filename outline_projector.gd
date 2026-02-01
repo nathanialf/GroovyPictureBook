@@ -45,14 +45,14 @@ class _OutlineDrawer:
 		if !page: return
 
 		for wall in page.get_all_walls():
-			__draw_node_collision_shapes(wall)
+			__draw_node_collision_shapes_filled(wall)
+			
+		__draw_diagonal_line_mask()
 
 		for hole in page.get_all_holes():
-			__draw_node_collision_shapes(hole)
+			__draw_node_collision_shapes_outline(hole)
 
-#		draw_rect(Rect2(Vector2.ZERO, Vector2(TEXTURE_SIZE.x, TEXTURE_SIZE.y)), page.page_color, false, OUTLINE_WIDTH, true)
-	
-	func __draw_node_collision_shapes(node: Node2D) -> void:
+	func __draw_node_collision_shapes_outline(node: Node2D) -> void:
 		var page_color := page.page_color
 
 		var local_xform := get_global_transform().affine_inverse() * node.global_transform
@@ -98,3 +98,47 @@ class _OutlineDrawer:
 				push_error("collision polygons not supported in outlines yet")
 
 		draw_set_transform_matrix(Transform2D.IDENTITY)
+
+	func __draw_node_collision_shapes_filled(node: Node2D) -> void:
+		var page_color := page.page_color
+		var draw_color := Color(page_color, 0.8)
+
+		for child in node.get_children():
+			if child is CollisionShape2D:
+				var local_xform: Transform2D = get_global_transform().affine_inverse() * child.global_transform
+				local_xform.origin += Vector2(0, Y_OFFSET)
+				draw_set_transform_matrix(local_xform)
+
+				var shape: Shape2D = child.shape
+				if shape is CircleShape2D:
+					draw_circle(Vector2.ZERO, shape.radius, draw_color)
+				elif shape is RectangleShape2D:
+					draw_rect(Rect2(-shape.size * 0.5, shape.size), draw_color, true)
+				elif shape is CapsuleShape2D:
+					var radius: float = shape.radius
+					var rect_height := maxf(shape.height - (radius * 2.0), 0.0)
+					var half_rect := rect_height * 0.5
+					draw_rect(Rect2(Vector2(-radius, -half_rect), Vector2(radius * 2.0, rect_height)), draw_color, true)
+					draw_circle(Vector2(0, -half_rect), radius, draw_color)
+					draw_circle(Vector2(0, half_rect), radius, draw_color)
+				elif shape is ConvexPolygonShape2D:
+					draw_polygon(shape.points, PackedColorArray([draw_color]))
+				else:
+					draw_rect(shape.get_rect(), draw_color, true)
+
+		draw_set_transform_matrix(Transform2D.IDENTITY)
+
+	func __draw_diagonal_line_mask() -> void:
+		const LINE_SPACING := 30.0
+		const LINE_WIDTH := 12.0
+		var mask_color := Color(0, 0, 0, 0.75)
+
+		var texture_size := Vector2(TEXTURE_SIZE)
+		var diagonal_length := texture_size.length()
+		var num_lines := int(diagonal_length / LINE_SPACING) + 2
+
+		for i in range(-num_lines, num_lines):
+			var offset := i * LINE_SPACING
+			var start := Vector2(offset, 0)
+			var end := Vector2(offset + texture_size.y, texture_size.y)
+			draw_line(start, end, mask_color, LINE_WIDTH)
