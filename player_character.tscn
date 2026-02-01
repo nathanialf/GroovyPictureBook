@@ -12,7 +12,6 @@ sliding_acceleration = 5.0
 move_speed = 295
 jump_force = 578
 wall_jump_force = Vector2(540, 440)
-movement_weight = 3.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556107828]
 shape = SubResource("RectangleShape2D_02ohv")

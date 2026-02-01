@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export var move_speed := 600
 @export var jump_force := 1200
 @export var wall_jump_force := Vector2(1100,900)
-@export var movement_weight := 5.0
+@export var movement_weight_air := 5.0
+@export var movement_weight_ground := 5.0
 
 var player_animator: AnimationTree 
 var player_obj: Node 
@@ -68,6 +69,8 @@ func _physics_process(delta: float) -> void:
 	wall_jump_period -= delta
 	in_air_timer -= delta
 	
+	print_debug(in_air_timer)
+	
 	if in_air_timer > 0.01:
 		player_animator.set("parameters/StateMachine/conditions/in_air", true)
 		player_animator.set("parameters/StateMachine/conditions/jump_end", false)
@@ -113,10 +116,17 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 
 	if wall_jump_period < 0:
-		velocity.x *= (1-(delta*movement_weight))
+		if is_on_floor():
+			velocity.x *= (1-(delta*movement_weight_ground))
+		else:
+			velocity.x *= (1-(delta*movement_weight_air))
+			
 		velocity.x = clamp(velocity.x, -move_speed, move_speed)
 	else: 
-		velocity.x *= (1-(delta*(movement_weight/2.0)))
+		if is_on_floor():
+			velocity.x *= (1-(delta*movement_weight_ground/2.0))
+		else:
+			velocity.x *= (1-(delta*movement_weight_air/2.0))
 
 	if is_on_floor():
 		can_walljump_left = true
