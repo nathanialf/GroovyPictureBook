@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var movement_weight_air := 5.0
 @export var movement_weight_ground := 5.0
 @export var can_double_walljump := true
+@export var hang_time_ms := 1000
 
 var player_animator: AnimationTree 
 var player_obj: Node 
@@ -191,7 +192,7 @@ func __deactivate_player() -> void:
 	if get_parent(): page.remove_child(self)
 	
 func on_page_flip() -> void:
-	hang_time_expiration = Time.get_ticks_msec() + 1000
+	hang_time_expiration = Time.get_ticks_msec() + hang_time_ms
 
 func __is_hang_time() -> bool:
 	return !Time.get_ticks_msec() > hang_time_expiration
