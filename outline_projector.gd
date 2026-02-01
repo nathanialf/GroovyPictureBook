@@ -77,7 +77,7 @@ class _OutlineDrawer:
 				draw_set_transform_matrix(xform_no_scale * child_xform)
 
 				if shape is CircleShape2D:
-					draw_arc(Vector2.ZERO, shape.radius * shape_scale.x, 0, TAU, false, page_color, OUTLINE_WIDTH, true)
+					draw_arc(Vector2.ZERO, shape.radius * shape_scale.x, 0, TAU, 32, page_color, OUTLINE_WIDTH, true)
 				elif shape is RectangleShape2D:
 					var scaled_size: Vector2 = shape.size * shape_scale
 					draw_rect(Rect2(-scaled_size * 0.5, scaled_size), page_color, false, OUTLINE_WIDTH, true)
