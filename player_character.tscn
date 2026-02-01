@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://hfxaq8puq6qn"]
 
+
 [ext_resource type="Script" uid="uid://f8lbekpwdsgs" path="res://player_character.gd" id="1_02ohv"]
+
+[ext_resource type="Script" uid="uid://c7ofv6ismw7si" path="res://player_character.gd" id="1_02ohv"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02ohv"]
 size = Vector2(100, 150)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2108810901]
 script = ExtResource("1_02ohv")
+
+
+wall_jump_force = Vector2(1200, 1200)
+
 movement_weight = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1556107828]

@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://c3xyum43h7j3r"]
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_be057"]
+
 [ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_be057"]
 [ext_resource type="Texture2D" uid="uid://cqemjdg0ujnfs" path="res://patterns/psttern_3.png" id="3_0svsi"]
 [ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="4_gm8eh"]
+
+[ext_resource type="Script" path="res://page_wall.gd" id="2_be057"]
+[ext_resource type="Texture2D" uid="uid://cqemjdg0ujnfs" path="res://patterns/psttern_3.png" id="3_0svsi"]
+[ext_resource type="Script" path="res://page_hole.gd" id="4_gm8eh"]
+
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_be057"]
 friction = 0.5
@@ -83,7 +89,10 @@ shape = SubResource("RectangleShape2D_woo8u")
 [node name="PageHole" type="Area2D" parent="." unique_id=514313105]
 position = Vector2(1212, 730)
 script = ExtResource("4_gm8eh")
+
 metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole" unique_id=207306761]
 rotation = 1.5707964

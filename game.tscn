@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
-[ext_resource type="PackedScene" uid="uid://qa47f04qccbp" path="res://pages/page2_test.tscn" id="4_7jktm"]
+[ext_resource type="PackedScene" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bc75yp3eue6b0" path="res://page3d.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node3D" unique_id=519886471]
