@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c3xyum43h7j3r"]
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_be057"]
-[ext_resource type="Script" path="res://page_wall.gd" id="2_be057"]
+[ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_be057"]
 [ext_resource type="Texture2D" uid="uid://cqemjdg0ujnfs" path="res://patterns/psttern_3.png" id="3_0svsi"]
 [ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="4_gm8eh"]
-[ext_resource type="Script" path="res://page_wall_simple.gd" id="5_o8wol"]
+[ext_resource type="Script" uid="uid://c0rr1uk6yfw5x" path="res://page_wall_simple.gd" id="5_o8wol"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_be057"]
 friction = 0.5
@@ -20,10 +20,11 @@ radius = 142.05
 height = 606.58
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gm8eh"]
-radius = 142.05
+radius = 88.88916
 height = 606.58
 
 [node name="Page1Test" type="Node2D" unique_id=1877032122]
+scale = Vector2(0.9999999, 0.9999999)
 script = ExtResource("1_be057")
 page_background = ExtResource("3_0svsi")
 page_move_speed_scalar = null
@@ -70,8 +71,8 @@ shape = SubResource("RectangleShape2D_woo8u")
 metadata/_edit_lock_ = true
 
 [node name="PageWall3" type="StaticBody2D" parent="." unique_id=2023808149]
-position = Vector2(398, 752)
-scale = Vector2(0.251, 1.19)
+position = Vector2(398.00006, 664)
+scale = Vector2(0.25099996, 2.023)
 physics_material_override = SubResource("PhysicsMaterial_be057")
 script = ExtResource("2_be057")
 
@@ -85,15 +86,15 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_woo8u")
 metadata/_edit_lock_ = true
 
-[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1472210159]
-position = Vector2(1033, 640)
+[node name="spot for pin" type="Polygon2D" parent="." unique_id=1472210159]
+position = Vector2(857.0001, 672.0001)
 scale = Vector2(0.3, 0.3)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
 uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="PageWall4" type="StaticBody2D" parent="." unique_id=803167283]
-position = Vector2(1289.9999, 766.99994)
+position = Vector2(1378.0001, 767)
 scale = Vector2(5, 0.3)
 physics_material_override = SubResource("PhysicsMaterial_be057")
 script = ExtResource("2_be057")
@@ -109,8 +110,8 @@ shape = SubResource("RectangleShape2D_woo8u")
 metadata/_edit_lock_ = true
 
 [node name="PageHole" type="Area2D" parent="." unique_id=514313105]
-position = Vector2(614, 542)
-scale = Vector2(0.72, 0.72)
+position = Vector2(534.00006, 406.00006)
+scale = Vector2(0.43199998, 0.71999997)
 script = ExtResource("4_gm8eh")
 metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
 
@@ -135,31 +136,140 @@ shape = SubResource("CapsuleShape2D_gm8eh")
 position = Vector2(1712, 359)
 scale = Vector2(3.4999998, 1.4999999)
 script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple2" type="StaticBody2D" parent="." unique_id=1330778406]
 position = Vector2(1448, 272)
 rotation = 1.5707964
 scale = Vector2(4.351344, 0.74999946)
 script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple3" type="StaticBody2D" parent="." unique_id=491389350]
 position = Vector2(1552, 495.99997)
 rotation = 1.5707964
 scale = Vector2(2.7369988, 1.4999993)
 script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple4" type="StaticBody2D" parent="." unique_id=511975597]
 position = Vector2(1437, 616)
 scale = Vector2(2.309124, 1.4999993)
 script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple5" type="StaticBody2D" parent="." unique_id=387997403]
 position = Vector2(1336, 392)
 rotation = 1.5707964
 scale = Vector2(4.1859984, 1.4999994)
 script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple6" type="StaticBody2D" parent="." unique_id=960943260]
 position = Vector2(1128, 200)
 scale = Vector2(3.8499992, 1.7999996)
 script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple7" type="StaticBody2D" parent="." unique_id=1549815206]
+position = Vector2(744.0001, 200)
+scale = Vector2(3.8499992, 1.7999996)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple8" type="StaticBody2D" parent="." unique_id=868125123]
+position = Vector2(360.00012, 200)
+scale = Vector2(3.8499992, 1.7999996)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageHole3" type="Area2D" parent="." unique_id=1348332265]
+position = Vector2(-132, 148.99998)
+scale = Vector2(0.72, 0.72)
+script = ExtResource("4_gm8eh")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole3" unique_id=1314158794]
+position = Vector2(1036.1111, -58.333336)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_gm8eh")
+
+[node name="spot for pin2" type="Polygon2D" parent="." unique_id=646653825]
+position = Vector2(305.00006, 920.0001)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="spot for pin3" type="Polygon2D" parent="." unique_id=64879598]
+position = Vector2(185.00003, 1039.0001)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="Edge wall side" type="StaticBody2D" parent="." unique_id=1007179374]
+position = Vector2(0, 552.00006)
+rotation = 1.5707964
+scale = Vector2(10.443, 0.01)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="edgewall top and bottom" type="StaticBody2D" parent="." unique_id=720403343]
+position = Vector2(1006.00006, 1080.0002)
+rotation = 3.1415927
+scale = Vector2(19.850286, 0.009999997)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="edgewall top and bottom2" type="StaticBody2D" parent="." unique_id=1122266879]
+position = Vector2(990.0001, -7.6293945e-06)
+rotation = 3.1415927
+scale = Vector2(19.850286, 0.009999997)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="Edge wall side2" type="StaticBody2D" parent="." unique_id=1306816527]
+position = Vector2(1920, 552.00006)
+rotation = 1.5707964
+scale = Vector2(10.443, 0.01)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple9" type="StaticBody2D" parent="." unique_id=1825410548]
+position = Vector2(1440.0001, 984.0001)
+rotation = 1.5707964
+scale = Vector2(1.7405374, -1.2749989)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple10" type="StaticBody2D" parent="." unique_id=1582070528]
+position = Vector2(1565.0002, 912.0001)
+scale = Vector2(2.309124, 1.4999993)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple11" type="StaticBody2D" parent="." unique_id=2044070037]
+position = Vector2(1816.0004, 936.0001)
+rotation = 1.5707964
+scale = Vector2(2.2626987, -1.2749988)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple12" type="StaticBody2D" parent="." unique_id=821869604]
+position = Vector2(1629.0002, 1056.0001)
+scale = Vector2(3.4636858, 1.4999992)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageHole4" type="Area2D" parent="." unique_id=1661495155]
+position = Vector2(-132, 148.99998)
+scale = Vector2(0.72, 0.72)
+script = ExtResource("4_gm8eh")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole4" unique_id=756766165]
+position = Vector2(2436.111, 1152.778)
+rotation = 1.5707964
+scale = Vector2(0.8999999, 0.7999999)
+shape = SubResource("CapsuleShape2D_gm8eh")
