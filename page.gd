@@ -4,8 +4,12 @@ class_name Page
 extends Node2D
 
 @export var page_color: Color = Color.GREEN
+@export var page_background: Texture2D:
+	set(value): __page_background.page_texture = value
+	get(): return __page_background.page_texture
 
 var __player_character: CharacterBody2D
+var __page_background := PageBackground.new()
 
 var is_active_page := false:
 	set(value):
@@ -20,6 +24,8 @@ func _init() -> void:
 		__player_character = load("res://player_character.tscn").instantiate()
 		add_child(__player_character)
 		__player_character.position = Vector2(1920/2.0, 0)
+	
+	add_child(__page_background)
 
 func get_player_state() -> PagePlayerState:
 	var pps := PagePlayerState.new()
