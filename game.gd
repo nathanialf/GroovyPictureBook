@@ -48,18 +48,41 @@ func __refresh_page_positions() -> void:
 		page.page_index = page_i
 		var page_spacing := 0.25
 		var page_z := (page_i - active_page_index) * -page_spacing
-		var target_anim: TargetAnimation
-		if page3d.has_meta("target_anim"):
-			target_anim = page3d.get_meta("target_anim")
+		const flipped_page_z := -1
+		var page_y: float
+		if (page_i - active_page_index) < 0: page_y = flipped_page_z
+		else: page_y = 0
+		var z_target_anim: TargetAnimation
+		var y_target_anim: TargetAnimation
+		if page3d.has_meta("z_target_anim"):
+			z_target_anim = page3d.get_meta("z_target_anim")
+			y_target_anim = page3d.get_meta("y_target_anim")
 		else:
-			target_anim = TargetAnimation.new()
-			target_anim.updated.connect(
+			z_target_anim = TargetAnimation.new()
+			z_target_anim.config = load("res://page_z_spring.tres")
+			z_target_anim.updated.connect(
 				func(value: float):
 					page3d.position.z = value
 			)
-			add_child(target_anim)
-			page3d.set_meta("target_anim", target_anim)
-		target_anim.target = page_z
+			add_child(z_target_anim)
+			page3d.set_meta("z_target_anim", z_target_anim)
+			y_target_anim = TargetAnimation.new()
+			y_target_anim.config = load("res://page_y_spring.tres")
+			y_target_anim.updated.connect(
+				func(value: float):
+					page3d.position.y = value
+					const max_rot := flipped_page_z / 5.0
+					var rot: float
+					if value > max_rot:
+						rot = remap(value, 0, flipped_page_z / 5.0, 0, PI / 2.0)
+					else:
+						rot = PI / 2.0
+					page3d.rotation.x = rot
+			)
+			add_child(y_target_anim)
+			page3d.set_meta("y_target_anim", y_target_anim)
+		z_target_anim.target = page_z
+		y_target_anim.target = page_y
 
 func __flip_page_by(amount: int) -> bool:
 	var pages := __all_pages()
