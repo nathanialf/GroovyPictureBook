@@ -10,6 +10,7 @@ extends Node2D
 
 var __player_character: CharacterBody2D
 var __page_background := PageBackground.new()
+var __hole_test_body := AnimatableBody2D.new()
 
 var is_active_page := false:
 	set(value):
@@ -26,6 +27,26 @@ func _init() -> void:
 		__player_character.position = Vector2(1920/2.0, 1080/2.0)
 	
 	add_child(__page_background)
+	
+	# copy player collision to hole tester
+	var player_collision: CollisionShape2D = __player_character\
+		.get_node("CollisionShape2D")
+	__hole_test_body.add_child(player_collision.duplicate())
+	__hole_test_body.set_collision_layer_value(1, false)
+	__hole_test_body.set_collision_layer_value(2, true)
+	add_child(__hole_test_body)
+
+func _process(delta: float) -> void:
+	__hole_test_body.position = $"../../../../".active_page.get_player_position()
+
+func test_is_near_hole() -> bool:
+	for hole in get_all_holes():
+		if hole.overlaps_body(__hole_test_body):
+			return true
+	return false
+
+func get_player_position() -> Vector2:
+	return __player_character.position
 
 func get_player_state() -> PagePlayerState:
 	var pps := PagePlayerState.new()

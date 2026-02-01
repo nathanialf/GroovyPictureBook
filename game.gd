@@ -24,9 +24,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Page forward"):
-		__flip_page_by(1)
+		if __player_is_near_forward_hole():
+			__flip_page_by(1)
 	elif Input.is_action_just_pressed("Page backward"):
-		__flip_page_by(-1)
+		if __player_is_near_backward_hole():
+			__flip_page_by(-1)
 	
 	if Input.is_key_pressed(Key.KEY_R):
 		get_tree().change_scene_to_file("res://game.tscn")
@@ -36,6 +38,15 @@ func _process(delta: float) -> void:
 	$PlayerSprite.position.x = player_pos_3d.x
 	$PlayerSprite.position.y = player_pos_3d.y
 	$Camera3D.notify_moved_player()
+
+func __player_is_near_forward_hole() -> bool:
+	var test_page := active_page
+	return test_page.test_is_near_hole()
+
+func __player_is_near_backward_hole() -> bool:
+	if active_page_index == 0: return false
+	var test_page := __all_pages()[active_page_index - 1]
+	return test_page.test_is_near_hole()
 
 func __pos2d_to_pos3d(pos2d: Vector2) -> Vector2:
 	# TODO lol

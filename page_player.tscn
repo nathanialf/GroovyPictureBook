@@ -7,6 +7,7 @@
 size = Vector2(128, 128)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2083371474]
+collision_layer = 2
 script = ExtResource("1_wipfy")
 
 [node name="DebugSprite" type="Sprite2D" parent="." unique_id=99084233]
@@ -15,3 +16,5 @@ texture = ExtResource("2_mesh8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388665423]
 shape = SubResource("RectangleShape2D_7tx1s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=674575503]
