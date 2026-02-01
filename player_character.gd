@@ -82,6 +82,9 @@ func _physics_process(delta: float) -> void:
 	if wall_jump_period < 0:
 		player_animator.set("parameters/StateMachine/conditions/jump_off", false)
 	
+	if wall_jump_period < 0:
+		player_animator.set("parameters/StateMachine/conditions/jump_off", false)
+	
 	if turn_animation_reset < 0.0:
 		player_animator.set("parameters/StateMachine/conditions/turn", false)
 
@@ -98,6 +101,9 @@ func _physics_process(delta: float) -> void:
 		player_animator.set("parameters/StateMachine/conditions/jump_end", true)
 		player_animator.set("parameters/StateMachine/conditions/jump_start", false)
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	var space_state = get_world_2d().direct_space_state
 	var left_wall_query = PhysicsRayQueryParameters2D.create(position, position + Vector2(-80.0, 0.0))
@@ -141,12 +147,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			player_animator.set("parameters/StateMachine/conditions/wall_hug", false)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			player_animator.set("parameters/StateMachine/conditions/wall_hug_right", false)
 		
 	if (not left_wall_result) and (not right_wall_result):
 		player_animator.set("parameters/StateMachine/conditions/clear_walljump", true)
 	else:
 		player_animator.set("parameters/StateMachine/conditions/clear_walljump", false)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 		
