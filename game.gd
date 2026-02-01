@@ -28,6 +28,9 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("Page backward"):
 		__flip_page_by(-1)
 	
+	if Input.is_key_pressed(Key.KEY_R):
+		get_tree().change_scene_to_file("res://game.tscn")
+	
 	var player_pos_2d := active_page.get_player_state().position
 	var player_pos_3d := __pos2d_to_pos3d(player_pos_2d)
 	$PlayerSprite.position.x = player_pos_3d.x

@@ -1,9 +1,11 @@
+@tool
+
 class_name Page
 extends Node2D
 
 @export var page_color: Color = Color.GREEN
 
-var __player_character: CharacterBody2D = load("res://player_character.tscn").instantiate()
+var __player_character: CharacterBody2D
 
 var is_active_page := false:
 	set(value):
@@ -14,8 +16,10 @@ signal is_active_page_changed(value: bool)
 var page_index := -1
 
 func _init() -> void:
-	add_child(__player_character)
-	__player_character.position = Vector2(1920/2.0, 0)
+	if !Engine.is_editor_hint():
+		__player_character = load("res://player_character.tscn").instantiate()
+		add_child(__player_character)
+		__player_character.position = Vector2(1920/2.0, 0)
 
 func get_player_state() -> PagePlayerState:
 	var pps := PagePlayerState.new()
@@ -29,6 +33,11 @@ func set_player_state(player_state: PagePlayerState) -> void:
 
 func get_player_character() -> CharacterBody2D:
 	return __player_character
+
+func get_all_holes() -> Array[PageHole]:
+	var result: Array[PageHole] = []
+	result.append_array(get_children().filter(func(child): return child is PageHole))
+	return result
 
 class PagePlayerState:
 	extends RefCounted
