@@ -45,8 +45,8 @@ shape = SubResource("RectangleShape2D_be057")
 shape = SubResource("RectangleShape2D_be057")
 
 [node name="PageWall2" type="StaticBody2D" parent="." unique_id=1325699358]
-position = Vector2(192, 643)
-scale = Vector2(1, 4)
+position = Vector2(190.00002, 601)
+scale = Vector2(0.388, 3.98)
 physics_material_override = SubResource("PhysicsMaterial_be057")
 script = ExtResource("2_be057")
 
@@ -59,8 +59,8 @@ uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 shape = SubResource("RectangleShape2D_woo8u")
 
 [node name="PageWall3" type="StaticBody2D" parent="." unique_id=2023808149]
-position = Vector2(708, 342)
-scale = Vector2(1, 4)
+position = Vector2(398, 752)
+scale = Vector2(0.251, 1.19)
 physics_material_override = SubResource("PhysicsMaterial_be057")
 script = ExtResource("2_be057")
 
@@ -73,7 +73,7 @@ uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 shape = SubResource("RectangleShape2D_woo8u")
 
 [node name="PageWall4" type="StaticBody2D" parent="." unique_id=803167283]
-position = Vector2(1627, 684)
+position = Vector2(1289.9999, 766.99994)
 scale = Vector2(5, 0.3)
 physics_material_override = SubResource("PhysicsMaterial_be057")
 script = ExtResource("2_be057")
@@ -87,7 +87,8 @@ uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 shape = SubResource("RectangleShape2D_woo8u")
 
 [node name="PageHole" type="Area2D" parent="." unique_id=514313105]
-position = Vector2(1212, 730)
+position = Vector2(614, 542)
+scale = Vector2(0.72, 0.72)
 script = ExtResource("4_gm8eh")
 
 metadata/_custom_type_script = "uid://c6uyhv5ax61qe"

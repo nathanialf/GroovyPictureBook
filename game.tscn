@@ -2,9 +2,23 @@
 
 [ext_resource type="Script" uid="uid://b32i8mqgc8vrr" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dji7tytceexa3" path="res://movement_test/character_run.tscn" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://fem0shj6kr8h" path="res://camera.gd" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://c3xyum43h7j3r" path="res://pages/page1_test.tscn" id="3_fc0e3"]
 [ext_resource type="PackedScene" path="res://pages/page2_test.tscn" id="4_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bc75yp3eue6b0" path="res://page3d.tscn" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://hgctsa5inf0p" path="res://target_animation.gd" id="4_j5wjh"]
+[ext_resource type="Script" uid="uid://8hn2y811b0n8" path="res://target_animation_config.gd" id="5_j5wjh"]
+
+[sub_resource type="Resource" id="Resource_vef74"]
+script = ExtResource("5_j5wjh")
+damping_constant = 50.0
+metadata/_custom_type_script = "uid://8hn2y811b0n8"
+
+[sub_resource type="Resource" id="Resource_j5wjh"]
+script = ExtResource("5_j5wjh")
+spring_constant = 250.0
+damping_constant = 50.0
+metadata/_custom_type_script = "uid://8hn2y811b0n8"
 
 [node name="Game" type="Node3D" unique_id=519886471]
 script = ExtResource("1_80nbo")
@@ -14,13 +28,24 @@ unique_name_in_owner = true
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0.01)
 
 [node name="character_run" parent="PlayerSprite" unique_id=1773396158 instance=ExtResource("2_feb5d")]
-transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0, 0, 0)
+transform = Transform3D(-5.2453664e-09, 0, 0.12, 0, 0.12, 0, -0.12, 0, -5.2453664e-09, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=10132499]
-transform = Transform3D(1, 0, 0, 0, 0.9837068, 0.1797809, 0, -0.1797809, 0.9837068, 0.96, 0.038461566, 3.148)
+transform = Transform3D(1, 0, 0, 0, 0.9837067, 0.1797809, 0, -0.1797809, 0.9837067, 0, 0.4850288, 2.091046)
 current = true
-fov = 29.3
+fov = 22.3
 size = 1.3631029
+script = ExtResource("3_eow3j")
+
+[node name="XTargetAnimation" type="Node" parent="Camera3D" unique_id=931201905]
+script = ExtResource("4_j5wjh")
+config = SubResource("Resource_vef74")
+metadata/_custom_type_script = "uid://hgctsa5inf0p"
+
+[node name="YTargetAnimation" type="Node" parent="Camera3D" unique_id=753444433]
+script = ExtResource("4_j5wjh")
+config = SubResource("Resource_j5wjh")
+metadata/_custom_type_script = "uid://hgctsa5inf0p"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073432316]
 transform = Transform3D(0.9114464, 0.32436162, -0.253091, -0.29250705, 0.94348896, 0.15578246, 0.2893184, -0.06795648, 0.95481765, 0, 0, 0)
