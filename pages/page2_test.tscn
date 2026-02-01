@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_hre08"]
 [ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_68gdu"]
 [ext_resource type="Texture2D" uid="uid://wby8w1ftit4c" path="res://patterns/240_F_1627967903_EThzw96k8FJTjIDZHupQaEvwfzLUzUad.jpg" id="3_yra41"]
+[ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="4_yra41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q5re"]
 size = Vector2(600, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnasd"]
 
 [node name="Page2Test" type="Node2D" unique_id=1659456041]
 script = ExtResource("1_hre08")
@@ -24,3 +27,12 @@ polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall" unique_id=1424260999]
 shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageHole" type="Area2D" parent="." unique_id=2012918378]
+position = Vector2(266, 229)
+scale = Vector2(-16.609602, -16.609602)
+script = ExtResource("4_yra41")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole" unique_id=63726825]
+shape = SubResource("CircleShape2D_pnasd")
