@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var sliding_acceleration := 35.0
 @export var move_speed := 600
 @export var jump_force := 1200
-@export var wall_jump_force := Vector2(1100,-900)
+@export var wall_jump_force := Vector2(1100,900)
 @export var movement_weight := 5.0
 
 var player_animator: AnimationTree 
@@ -144,11 +144,13 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("Jump") && (walljump_left_emable || walljump_right_emable):
 		if walljump_left_emable:
 			velocity = wall_jump_force
+			velocity.y *= -1.0
 			can_walljump_left = false
 			can_walljump_right = true
 		else:
 			velocity = wall_jump_force
 			velocity.x *= -1.0
+			velocity.y *= -1.0
 			can_walljump_left = true
 			can_walljump_right = false
 		
