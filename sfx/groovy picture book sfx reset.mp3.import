@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cw1vuesfmpiud"
+path="res://.godot/imported/groovy picture book sfx reset.mp3-5db8787d5677dfce839b1d2fa0b0bb3f.mp3str"
+
+[deps]
+
+source_file="res://sfx/groovy picture book sfx reset.mp3"
+dest_files=["res://.godot/imported/groovy picture book sfx reset.mp3-5db8787d5677dfce839b1d2fa0b0bb3f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

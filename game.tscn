@@ -136,8 +136,9 @@ player = NodePath("../../PlayerSprite")
 transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.6406991, -0.6446243, 0.051738977)
 player = NodePath("../../PlayerSprite")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1268595945]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1033802842]
 stream = ExtResource("10_hve3p")
+volume_db = -12.0
 autoplay = true
 
 [node name="Control" type="Control" parent="." unique_id=1775790728]

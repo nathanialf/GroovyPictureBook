@@ -8,6 +8,8 @@ var inital_pos = Vector3()
 var inital_rot = Vector3()
 var drop_pos = 0.0
 
+var __played_pickup_sound := false
+
 func _ready() -> void:
 	inital_pos = position
 	inital_rot = rotation
@@ -19,6 +21,9 @@ func _process(delta: float) -> void:
 
 	if diff < pickup_dist:
 		inside = false
+		if !__played_pickup_sound:
+			SFX.get_host(self).play_at_position_3d(SFX.PICKUP, global_position)
+			__played_pickup_sound = true
 		
 	if !inside:
 		remove_time += delta

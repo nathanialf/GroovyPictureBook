@@ -13,6 +13,7 @@ signal active_page_changing(page: Page)
 signal active_page_changed(page: Page)
 
 var game_state: State = State.MAIN_MENU
+var sfx_host := SFX.new()
 var transition_time = 0.0
 
 @export var book_cover: Node3D
@@ -31,6 +32,15 @@ func _ready() -> void:
 	
 	active_page = __all_pages()[active_page_index]
 	__refresh_page_positions()
+	
+	add_child(sfx_host)
+	sfx_host.sfx_placement_requested.connect(
+		func(node_to_place: Node3D, position_2d: Vector2):
+			var pos_3d := __pos2d_to_pos3d(position_2d)
+			add_child(node_to_place)
+			if position_2d != sfx_host.NO_POSITION:
+				node_to_place.position = Vector3(pos_3d.x, pos_3d.y, 0.0)
+	)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Page forward"):

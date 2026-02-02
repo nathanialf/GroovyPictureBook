@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dkcbw3cmj3bv3"]
 
-[ext_resource type="Script" path="res://models/pushpin.gd" id="1_1wh7x"]
+[ext_resource type="Script" uid="uid://dj7h341ukmun0" path="res://models/pushpin.gd" id="1_1wh7x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14uc2"]
 resource_name = "Material.001"
