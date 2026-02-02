@@ -23,6 +23,8 @@ func _process(delta: float) -> void:
 	
 	for pin in pins:
 		if pin != null:
+			pin.page_num = current_page
+			
 			if pin.inside:
 				pin_num+=1
 				
