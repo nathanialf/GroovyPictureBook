@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://dji7tytceexa3"]
 
-[ext_resource type="Script" uid="uid://kaw3h4w7benp" path="res://movement_test/player_color.gd" id="1_6xpsq"]
 [ext_resource type="AnimationLibrary" uid="uid://bemir3rahr2nu" path="res://jump_anim.res" id="2_jumhs"]
 [ext_resource type="AnimationLibrary" uid="uid://drk2ltx3fv2q5" path="res://stand_anim.res" id="3_wvrqo"]
 [ext_resource type="AnimationLibrary" uid="uid://dorq1vjuyl822" path="res://turn_anim.res" id="4_wmirp"]
@@ -655,7 +654,6 @@ mesh = SubResource("ArrayMesh_87dv3")
 skin = SubResource("Skin_vapb4")
 skeleton = NodePath("..")
 surface_material_override/0 = SubResource("StandardMaterial3D_o2n41")
-script = ExtResource("1_6xpsq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1170230908]
 libraries/ = SubResource("AnimationLibrary_vei41")
