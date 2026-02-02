@@ -85,10 +85,14 @@ func _process(delta: float) -> void:
 			print_debug("ere2")
 			
 			game_state = State.CAMERA_ZOOM_OUT
-			transition_time = 6.0
+			transition_time = 10.0
 	if game_state == State.CAMERA_ZOOM_OUT:
-		$Camera3D.lerp_main_angle(delta)
-		book_cover.target_cover_pos = 160.0
+		if transition_time > 7:
+			book_cover.target_cover_pos = 20.0
+			$Camera3D.notify_moved_player(delta)
+		else:
+			book_cover.target_cover_pos = 160.0
+			$Camera3D.lerp_main_angle(delta)
 		transition_time -= delta
 		start_text.hide()
 		end_text.hide()
