@@ -10,18 +10,21 @@ var __offset: Vector2
 @export var game_target: Node3D
 @export var book_cover: Node3D
 
+var use_smooth = true
+
 func _ready() -> void:
 	__x_target_anim.updated.connect(
-		func(value: float): position.x = value
+		func(value: float): if use_smooth: position.x = value
 	)
 	__y_target_anim.updated.connect(
-		func(value: float): position.y = value
+		func(value: float): if use_smooth: position.y = value
 	)
 	__offset = __orig_offset
 
 var __did_first_move := false
 
 func notify_moved_player(delta) -> void:
+	use_smooth=true
 	if !__did_first_move:
 		__x_target_anim.snap_to(__player.position.x + __offset.x)
 		__y_target_anim.snap_to(__player.position.y + __offset.y)
@@ -32,13 +35,16 @@ func notify_moved_player(delta) -> void:
 	__y_target_anim.target = __player.position.y + __offset.y
 	
 func lerp_main_angle(delta) -> void:
-	position = lerp(position, main_menu_target.position, delta*1.5)
-	rotation = lerp(rotation, main_menu_target.rotation, delta*1.5)
+	use_smooth=false
+	position = lerp(position, main_menu_target.position, delta*0.5)
+	rotation = lerp(rotation, main_menu_target.rotation, delta*0.5)
 	
 func jump_main_angle(delta) -> void:
+	use_smooth=false
 	position = main_menu_target.position
 	rotation = main_menu_target.rotation
 	
 func lerp_game_angle(delta) -> void:
+	use_smooth=false
 	position = lerp(position, game_target.position, delta*1.5)
 	rotation = lerp(rotation, game_target.rotation, delta*1.5)

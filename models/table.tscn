@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d3yisyoeptcsx" path="res://models/table.blend" id="1_socmc"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_socmc"]
+albedo_color = Color(0.7060565, 0.6066659, 0.5038251, 1)
+
 [node name="table" unique_id=358082385 instance=ExtResource("1_socmc")]
 
 [node name="Light" parent="." index="0" unique_id=194314970]
@@ -9,3 +12,15 @@ visible = false
 
 [node name="Camera" parent="." index="1" unique_id=1580900135]
 visible = false
+
+[node name="Cube" parent="." index="10" unique_id=831802446]
+surface_material_override/0 = SubResource("StandardMaterial3D_socmc")
+
+[node name="Cube_001" parent="." index="11" unique_id=1741354357]
+transform = Transform3D(1.256697e-06, 3.5139794, 0, -3.5139794, 1.256697e-06, 0, 0, 0, 3.5139794, -0.6674317, 0.4315423, 7.7936006)
+
+[node name="Cube_004" parent="." index="14" unique_id=929841558]
+transform = Transform3D(6.2834846e-07, 9.425226e-07, -3.5139794, -3.5139794, 2.0944965e-07, -6.283484e-07, 2.0944947e-07, 3.5139794, 9.425227e-07, -8.483249, 0.4315423, -0.052435264)
+
+[node name="Cube_007" parent="." index="17" unique_id=841742510]
+transform = Transform3D(1.256697e-06, 3.5139794, 0, -3.5139794, 1.256697e-06, 0, 0, 0, 3.5139794, -0.6674317, 0.4315423, -8.708195)

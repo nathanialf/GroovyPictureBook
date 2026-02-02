@@ -16,6 +16,9 @@ var game_state: State = State.MAIN_MENU
 var transition_time = 0.0
 
 @export var book_cover: Node3D
+@export var pushpin_manager: Node3D
+@export var start_text: Control
+@export var end_text: Control
 
 func _ready() -> void:
 	active_page_changing.connect(
@@ -45,19 +48,47 @@ func _process(delta: float) -> void:
 	$PlayerSprite.position.x = player_pos_3d.x
 	$PlayerSprite.position.y = player_pos_3d.y
 	if game_state == State.MAIN_MENU:
-		$Camera3D.lerp_main_angle(delta)
+		$Camera3D.jump_main_angle(delta)
+		book_cover.target_cover_pos = 160.0
+		start_text.show()
+		end_text.hide()
 		
 		if Input.is_action_just_pressed("Jump"):
 			game_state = State.CAMERA_ZOOM_IN
 			transition_time = 4.0
 	if game_state == State.CAMERA_ZOOM_IN:
 		$Camera3D.lerp_game_angle(delta)
+		book_cover.target_cover_pos = 20.0
 		transition_time -= delta
+		start_text.hide()
+		end_text.hide()
 		
 		if transition_time < 0:
 			game_state = State.GAME
 	if game_state == State.GAME:
 		$Camera3D.notify_moved_player(delta)
+		book_cover.target_cover_pos = 20.0
+		start_text.hide()
+		end_text.hide()
+		
+		if pushpin_manager.finished:
+			print_debug("ere2")
+			
+			game_state = State.CAMERA_ZOOM_OUT
+			transition_time = 6.0
+	if game_state == State.CAMERA_ZOOM_OUT:
+		$Camera3D.lerp_main_angle(delta)
+		book_cover.target_cover_pos = 160.0
+		transition_time -= delta
+		start_text.hide()
+		end_text.hide()
+		
+		if transition_time < 0:
+			game_state = State.END
+	if game_state == State.END:
+		$Camera3D.jump_main_angle(delta)
+		start_text.hide()
+		end_text.show()
 
 func __player_is_near_forward_hole() -> bool:
 	var test_page := active_page

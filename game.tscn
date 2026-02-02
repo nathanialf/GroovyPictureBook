@@ -18,13 +18,11 @@
 [sub_resource type="Resource" id="Resource_vef74"]
 script = ExtResource("5_j5wjh")
 damping_constant = 50.0
-metadata/_custom_type_script = "uid://8hn2y811b0n8"
 
 [sub_resource type="Resource" id="Resource_j5wjh"]
 script = ExtResource("5_j5wjh")
 spring_constant = 250.0
 damping_constant = 50.0
-metadata/_custom_type_script = "uid://8hn2y811b0n8"
 
 [sub_resource type="GDScript" id="GDScript_hve3p"]
 script/source = "extends Node3D
@@ -55,17 +53,27 @@ func _ready() -> void:
 		)
 "
 
-[sub_resource type="GDScript" id="GDScript_mfdv2"]
-script/source = "extends Node2D
+[sub_resource type="LabelSettings" id="LabelSettings_215e1"]
+font_size = 128
+shadow_size = 32
+shadow_color = Color(0, 0, 0, 1)
 
-func _draw() -> void:
-	var projector = $\"../Pages/OutlineProjector\"
-	var tex: Texture2D = projector.__outline_viewport.get_texture()
-	draw_texture(tex, Vector2.ZERO)
-"
+[sub_resource type="LabelSettings" id="LabelSettings_7sc4i"]
+font_size = 64
+shadow_size = 32
+shadow_color = Color(0, 0, 0, 1)
 
-[node name="Game" type="Node3D" unique_id=519886471]
+[sub_resource type="LabelSettings" id="LabelSettings_80cx4"]
+font_size = 64
+shadow_size = 32
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node3D" unique_id=519886471 node_paths=PackedStringArray("book_cover", "pushpin_manager", "start_text", "end_text")]
 script = ExtResource("1_80nbo")
+book_cover = NodePath("book_cover")
+pushpin_manager = NodePath("pushpin_manager")
+start_text = NodePath("Control/Title_text")
+end_text = NodePath("Control/End_text")
 
 [node name="PlayerSprite" type="Sprite3D" parent="." unique_id=843110985]
 unique_name_in_owner = true
@@ -74,7 +82,7 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.675, -0.347, 0.01)
 [node name="character_run" parent="PlayerSprite" unique_id=1773396158 instance=ExtResource("2_feb5d")]
 transform = Transform3D(-5.2453664e-09, 0, 0.12, 0, 0.12, 0, -0.12, 0, -5.2453664e-09, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=10132499 node_paths=PackedStringArray("main_menu_target", "game_target")]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=10132499 node_paths=PackedStringArray("main_menu_target", "game_target", "book_cover")]
 transform = Transform3D(1, 0, 0, 0, 0.9837067, 0.1797809, 0, -0.1797809, 0.9837067, 0, 0.4850288, 2.091046)
 current = true
 fov = 22.3
@@ -82,6 +90,7 @@ size = 1.3631029
 script = ExtResource("3_eow3j")
 main_menu_target = NodePath("../camera_target_main_menu")
 game_target = NodePath("../camera_target_game")
+book_cover = NodePath("../book_cover")
 
 [node name="XTargetAnimation" type="Node" parent="Camera3D" unique_id=931201905]
 script = ExtResource("4_j5wjh")
@@ -133,16 +142,18 @@ autoplay = true
 
 [node name="Control" type="Control" parent="." unique_id=1775790728]
 layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="pushpin_ui_control" type="Control" parent="Control" unique_id=1951991676]
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 1924.0
+offset_right = 1964.0
 offset_bottom = 40.0
 
 [node name="ui_pushpin" type="TextureRect" parent="Control/pushpin_ui_control" unique_id=1117308562]
@@ -235,12 +246,58 @@ offset_bottom = 129.0
 texture = ExtResource("11_mfdv2")
 expand_mode = 1
 
+[node name="Title_text" type="Control" parent="Control" unique_id=1116676485]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/Title_text" unique_id=1179563331]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 230.0
+offset_right = 826.0
+offset_bottom = 761.0
+text = "Groovy 
+     Picture 
+             Book"
+label_settings = SubResource("LabelSettings_215e1")
+
+[node name="Label2" type="Label" parent="Control/Title_text" unique_id=376699993]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 815.0
+offset_right = 931.0
+offset_bottom = 1346.0
+text = "~Press Space to begin~"
+label_settings = SubResource("LabelSettings_7sc4i")
+
+[node name="End_text" type="Control" parent="Control" unique_id=796613667]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/End_text" unique_id=176878966]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 434.0
+offset_right = 961.0
+offset_bottom = 965.0
+text = "You Win!"
+label_settings = SubResource("LabelSettings_215e1")
+
+[node name="Label" type="Label" parent="Control/End_text/Label" unique_id=1883928395]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 201.0
+offset_right = 715.0
+offset_bottom = 732.0
+text = "Thanks for playing!"
+label_settings = SubResource("LabelSettings_80cx4")
+
 [node name="PageProjectorOrigin" type="Node3D" parent="." unique_id=1276404290]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, -0.54, 5)
-
-[node name="DebugThing" type="Node2D" parent="." unique_id=1209670247]
-script = SubResource("GDScript_mfdv2")
 
 [node name="table" parent="." unique_id=358082385 instance=ExtResource("12_lc2xo")]
 transform = Transform3D(-5.6087842e-08, -6.70589e-08, -2, -1.5341287, 1.2831402, 0, 1.2831402, 1.5341287, -8.742278e-08, 1.5245993, -0.8687203, -1.0681267)
@@ -249,4 +306,4 @@ transform = Transform3D(-5.6087842e-08, -6.70589e-08, -2, -1.5341287, 1.2831402,
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.8549298, -0.6, 0)
 
 [node name="book_cover" parent="." unique_id=853065262 instance=ExtResource("14_215e1")]
-transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -0.14961612, -0.5890209, -0.40732962)
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, -0.14961612, -0.5890209, -0.08410567)

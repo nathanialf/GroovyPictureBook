@@ -8,7 +8,7 @@ extends Node3D
 @export var edge_obj_dist := 1.0
 @export var game_node: Node3D
 
-var finished = false
+@export var finished = false
 var remove_time = 0.0
 var inital_pos = Vector3()
 var inital_rot = Vector3()
