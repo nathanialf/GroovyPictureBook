@@ -126,7 +126,7 @@ pickup_dist = 0.1
 ui_pins = [NodePath("../Control/pushpin_ui_control/ui_pushpin"), NodePath("../Control/pushpin_ui_control/ui_pushpin2"), NodePath("../Control/pushpin_ui_control/ui_pushpin3"), NodePath("../Control/pushpin_ui_control/ui_pushpin4"), NodePath("../Control/pushpin_ui_control/ui_pushpin5"), NodePath("../Control/pushpin_ui_control/ui_pushpin6"), NodePath("../Control/pushpin_ui_control/ui_pushpin7"), NodePath("../Control/pushpin_ui_control/ui_pushpin8"), NodePath("../Control/pushpin_ui_control/ui_pushpin9"), NodePath("../Control/pushpin_ui_control/ui_pushpin10")]
 player = NodePath("../PlayerSprite")
 edge_obj = NodePath("../edge")
-edge_obj_dist = 0.3
+edge_obj_dist = 0.25
 game_node = NodePath("..")
 
 [node name="pushpin" parent="pushpin_manager" unique_id=65536298 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
