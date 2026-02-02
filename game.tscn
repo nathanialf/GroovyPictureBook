@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bbdjy2kx388np" path="res://UI/pushpin.png" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://cs6iqsbiq7ea1" path="res://models/edge.tscn" id="12_iotsf"]
 [ext_resource type="PackedScene" uid="uid://dqgwr5x53ceba" path="res://models/table.tscn" id="12_lc2xo"]
+[ext_resource type="FontFile" uid="uid://c4x0r442ng8rb" path="res://patterns/Lobster-Regular.ttf" id="13_80cx4"]
 [ext_resource type="PackedScene" uid="uid://bm4axdvvf7pmb" path="res://models/book_cover.tscn" id="14_215e1"]
 
 [sub_resource type="Resource" id="Resource_vef74"]
@@ -55,17 +56,21 @@ func _ready() -> void:
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_215e1"]
-font_size = 128
+font = ExtResource("13_80cx4")
+font_size = 145
+font_color = Color(1, 0.7825, 0.55, 1)
 shadow_size = 32
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7sc4i"]
 font_size = 64
+font_color = Color(1, 0.39999998, 0.39999998, 1)
 shadow_size = 32
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_80cx4"]
 font_size = 64
+font_color = Color(1, 0.47000003, 0.47000003, 1)
 shadow_size = 32
 shadow_color = Color(0, 0, 0, 1)
 
@@ -121,21 +126,59 @@ page_scenes = Array[PackedScene]([ExtResource("3_fc0e3"), ExtResource("4_7jktm")
 
 [node name="pushpin_manager" type="Node3D" parent="." unique_id=1200090941 node_paths=PackedStringArray("pins", "ui_pins", "player", "edge_obj", "game_node")]
 script = ExtResource("9_hve3p")
-pins = [NodePath("pushpin"), null, NodePath("pushpin3")]
+pins = [NodePath("pushpin"), NodePath("pushpin3"), NodePath("pushpin4"), NodePath("pushpin5"), NodePath("pushpin6"), NodePath("pushpin7"), NodePath("pushpin8"), NodePath("pushpin9"), NodePath("pushpin10"), NodePath("pushpin11")]
 pickup_dist = 0.1
 ui_pins = [NodePath("../Control/pushpin_ui_control/ui_pushpin"), NodePath("../Control/pushpin_ui_control/ui_pushpin2"), NodePath("../Control/pushpin_ui_control/ui_pushpin3"), NodePath("../Control/pushpin_ui_control/ui_pushpin4"), NodePath("../Control/pushpin_ui_control/ui_pushpin5"), NodePath("../Control/pushpin_ui_control/ui_pushpin6"), NodePath("../Control/pushpin_ui_control/ui_pushpin7"), NodePath("../Control/pushpin_ui_control/ui_pushpin8"), NodePath("../Control/pushpin_ui_control/ui_pushpin9"), NodePath("../Control/pushpin_ui_control/ui_pushpin10")]
 player = NodePath("../PlayerSprite")
 edge_obj = NodePath("../edge")
-edge_obj_dist = 0.3
+edge_obj_dist = 0.25
 game_node = NodePath("..")
 
 [node name="pushpin" parent="pushpin_manager" unique_id=65536298 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
-transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.2349168, -0.51593393, 0.051739097)
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.3212385, -0.1496287, 0.051739097)
 player = NodePath("../../PlayerSprite")
 
 [node name="pushpin3" parent="pushpin_manager" unique_id=285274198 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
-transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.6406991, -0.6446243, 0.051738977)
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.848874, -0.6698352, 0.051738977)
 player = NodePath("../../PlayerSprite")
+
+[node name="pushpin4" parent="pushpin_manager" unique_id=583469343 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.32137722, -0.905535, 0.051738977)
+player = NodePath("../../PlayerSprite")
+
+[node name="pushpin5" parent="pushpin_manager" unique_id=1605963324 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.19199657, -1.045587, 0.051738977)
+player = NodePath("../../PlayerSprite")
+
+[node name="pushpin6" parent="pushpin_manager" unique_id=1346992209 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.95281446, -0.5722256, 0.12735558)
+player = NodePath("../../PlayerSprite")
+pagenum_loc = 1
+
+[node name="pushpin7" parent="pushpin_manager" unique_id=1679848517 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.0518649, -0.98507404, 0.12735558)
+player = NodePath("../../PlayerSprite")
+pagenum_loc = 1
+
+[node name="pushpin8" parent="pushpin_manager" unique_id=603580391 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.7976776, -0.95823586, 0.12735558)
+player = NodePath("../../PlayerSprite")
+pagenum_loc = 1
+
+[node name="pushpin9" parent="pushpin_manager" unique_id=1200478540 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.3369167, -0.921955, 0.051738977)
+player = NodePath("../../PlayerSprite")
+pagenum_loc = 1
+
+[node name="pushpin10" parent="pushpin_manager" unique_id=2070926388 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 1.1790701, -0.40593624, 0.12735558)
+player = NodePath("../../PlayerSprite")
+pagenum_loc = 2
+
+[node name="pushpin11" parent="pushpin_manager" unique_id=1770116367 node_paths=PackedStringArray("player") instance=ExtResource("6_ryrav")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, -0.02, 0, 0.02, -8.7422775e-10, 0.34640947, -0.48395866, 0.051738977)
+player = NodePath("../../PlayerSprite")
+pagenum_loc = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1033802842]
 stream = ExtResource("10_hve3p")
@@ -249,6 +292,7 @@ texture = ExtResource("11_mfdv2")
 expand_mode = 1
 
 [node name="Title_text" type="Control" parent="Control" unique_id=1116676485]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -266,10 +310,10 @@ label_settings = SubResource("LabelSettings_215e1")
 
 [node name="Label2" type="Label" parent="Control/Title_text" unique_id=376699993]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 815.0
-offset_right = 931.0
-offset_bottom = 1346.0
+offset_left = 80.0
+offset_top = 810.0
+offset_right = 823.0
+offset_bottom = 1341.0
 text = "~Press Space to begin~"
 label_settings = SubResource("LabelSettings_7sc4i")
 
@@ -290,11 +334,11 @@ label_settings = SubResource("LabelSettings_215e1")
 
 [node name="Label" type="Label" parent="Control/End_text/Label" unique_id=1883928395]
 layout_mode = 0
-offset_left = -28.0
-offset_top = 201.0
-offset_right = 715.0
-offset_bottom = 732.0
-text = "Thanks for playing!"
+offset_left = -64.0
+offset_top = 189.0
+offset_right = 679.0
+offset_bottom = 720.0
+text = "Thank you for playing!"
 label_settings = SubResource("LabelSettings_80cx4")
 
 [node name="PageProjectorOrigin" type="Node3D" parent="." unique_id=1276404290]

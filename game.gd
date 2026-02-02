@@ -82,8 +82,6 @@ func _process(delta: float) -> void:
 		end_text.hide()
 		
 		if pushpin_manager.finished:
-			print_debug("ere2")
-			
 			game_state = State.CAMERA_ZOOM_OUT
 			transition_time = 10.0
 	if game_state == State.CAMERA_ZOOM_OUT:

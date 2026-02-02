@@ -7,6 +7,8 @@ var remove_time = 0.0
 var inital_pos = Vector3()
 var inital_rot = Vector3()
 var drop_pos = 0.0
+@export var pagenum_loc = 0
+@export var page_num = 0
 
 var __played_pickup_sound := false
 
@@ -19,11 +21,16 @@ func _process(delta: float) -> void:
 	
 	var diff = diff_vec.length()
 
-	if diff < pickup_dist:
+	if page_num==pagenum_loc && diff < pickup_dist:
 		inside = false
 		if !__played_pickup_sound:
 			SFX.get_host(self).play_at_position_3d(SFX.PICKUP, global_position)
 			__played_pickup_sound = true
+		
+	if page_num==pagenum_loc:
+		position.z = lerp(position.z, 0.052, delta*10.0)
+	else:
+		position.z = lerp(position.z, -1.0, delta*10.0)
 		
 	if !inside:
 		remove_time += delta

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://qa47f04qccbp"]
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_hre08"]
-[ext_resource type="Script" uid="uid://ct6uppvyratyn" path="res://page_wall.gd" id="2_68gdu"]
-[ext_resource type="Texture2D" uid="uid://wby8w1ftit4c" path="res://patterns/240_F_1627967903_EThzw96k8FJTjIDZHupQaEvwfzLUzUad.jpg" id="3_yra41"]
+[ext_resource type="Script" path="res://page_wall.gd" id="2_68gdu"]
+[ext_resource type="Texture2D" uid="uid://5h3g4ou21t7w" path="res://patterns/pattern_4.png" id="2_pnasd"]
 [ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="4_yra41"]
-[ext_resource type="Script" uid="uid://c0rr1uk6yfw5x" path="res://page_wall_simple.gd" id="5_pnasd"]
+[ext_resource type="Script" path="res://page_wall_simple.gd" id="5_pnasd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q5re"]
 size = Vector2(600, 50)
@@ -28,13 +28,12 @@ height = 606.58
 [node name="Page2Test" type="Node2D" unique_id=1659456041]
 script = ExtResource("1_hre08")
 page_color = Color(0.7000003, 0, 1, 1)
-page_background = ExtResource("3_yra41")
+page_background = ExtResource("2_pnasd")
 metadata/_custom_type_script = "uid://1t6pghxubui0"
 
 [node name="PageWall" type="StaticBody2D" parent="." unique_id=267178102]
 position = Vector2(761, 662)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall" unique_id=165765098]
 color = Color(0.7000003, 0, 1, 1)
@@ -59,13 +58,11 @@ position = Vector2(1213, 533)
 rotation = -0.6420656
 scale = Vector2(4.7910585, 2.6638184)
 script = ExtResource("5_pnasd")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWall2" type="StaticBody2D" parent="." unique_id=1896383127]
 position = Vector2(1648, 392)
 scale = Vector2(0.86180705, 0.9225076)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall2" unique_id=1152684105]
 color = Color(0.7000003, 0, 1, 1)
@@ -78,7 +75,6 @@ shape = SubResource("RectangleShape2D_1q5re")
 position = Vector2(744, 224)
 scale = Vector2(1.031222, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall3" unique_id=2046945761]
 color = Color(0.7000003, 0, 1, 1)
@@ -92,7 +88,6 @@ position = Vector2(448, 472)
 rotation = 1.5707964
 scale = Vector2(0.73658717, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall4" unique_id=2067993513]
 color = Color(0.7000003, 0, 1, 1)
@@ -106,48 +101,23 @@ position = Vector2(1006.00006, 1080.0002)
 rotation = 3.1415927
 scale = Vector2(19.850286, 0.009999997)
 script = ExtResource("5_pnasd")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="edgewall top and bottom2" type="StaticBody2D" parent="." unique_id=452436162]
 position = Vector2(990.0001, -7.6293945e-06)
 rotation = 3.1415927
 scale = Vector2(19.850286, 0.009999997)
 script = ExtResource("5_pnasd")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="Edge wall side2" type="StaticBody2D" parent="." unique_id=152725480]
 position = Vector2(1920, 552.00006)
 rotation = 1.5707964
 scale = Vector2(10.443, 0.01)
 script = ExtResource("5_pnasd")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
-
-[node name="spot for pin3" type="Polygon2D" parent="." unique_id=1711725228]
-position = Vector2(1817, 967)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
-uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
-
-[node name="spot for pin4" type="Polygon2D" parent="." unique_id=1237060393]
-position = Vector2(345, 919)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
-uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
-
-[node name="spot for pin5" type="Polygon2D" parent="." unique_id=1597170900]
-position = Vector2(977, 567)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
-uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="PageWall5" type="StaticBody2D" parent="." unique_id=1240630850]
 position = Vector2(1600, 1032)
 scale = Vector2(1.0606856, 0.6709146)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall5" unique_id=1303198676]
 color = Color(0.7000003, 0, 1, 1)
@@ -160,7 +130,6 @@ shape = SubResource("RectangleShape2D_1q5re")
 position = Vector2(336, 520)
 scale = Vector2(0.29463488, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall6" unique_id=1744970526]
 color = Color(0.7000003, 0, 1, 1)
@@ -186,7 +155,6 @@ position = Vector2(208, 499)
 rotation = 1.5707964
 scale = Vector2(1.6705797, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall7" unique_id=852290459]
 color = Color(0.7000003, 0, 1, 1)
@@ -199,7 +167,6 @@ shape = SubResource("RectangleShape2D_1q5re")
 position = Vector2(336, 1016)
 scale = Vector2(0.5008793, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall8" unique_id=1865666908]
 color = Color(0.7000003, 0, 1, 1)
@@ -224,7 +191,6 @@ shape = SubResource("CapsuleShape2D_ptun5")
 position = Vector2(704, 1016)
 scale = Vector2(0.8249776, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall9" unique_id=125233710]
 color = Color(0.7000003, 0, 1, 1)
@@ -237,7 +203,6 @@ shape = SubResource("RectangleShape2D_1q5re")
 position = Vector2(744, 224)
 scale = Vector2(1.031222, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall10" unique_id=519997189]
 color = Color(0.7000003, 0, 1, 1)
@@ -251,7 +216,6 @@ position = Vector2(1272, 904)
 rotation = 1.5707964
 scale = Vector2(0.515611, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall11" unique_id=2059975904]
 color = Color(0.7000003, 0, 1, 1)
@@ -265,14 +229,12 @@ position = Vector2(1100.9999, 893)
 rotation = -0.6420656
 scale = Vector2(4.2161317, 2.6638184)
 script = ExtResource("5_pnasd")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWall12" type="StaticBody2D" parent="." unique_id=602677374]
 position = Vector2(1704, 671.99994)
 rotation = 1.5707964
 scale = Vector2(0.7734165, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall12" unique_id=1176686254]
 color = Color(0.7000003, 0, 1, 1)
@@ -286,7 +248,6 @@ position = Vector2(1568, 637)
 rotation = 1.5707964
 scale = Vector2(0.57635, 0.17611508)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall13" unique_id=1633992434]
 color = Color(0.7000003, 0, 1, 1)
@@ -311,7 +272,6 @@ shape = SubResource("CapsuleShape2D_3n084")
 position = Vector2(1104, 1057)
 scale = Vector2(0.49498656, 0.83864325)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall14" unique_id=1608641184]
 color = Color(0.7000003, 0, 1, 1)
@@ -320,19 +280,11 @@ polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall14" unique_id=1511412225]
 shape = SubResource("RectangleShape2D_1q5re")
 
-[node name="spot for pin6" type="Polygon2D" parent="." unique_id=1263548923]
-position = Vector2(1065, 999.00006)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
-uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
-
 [node name="PageWall15" type="StaticBody2D" parent="." unique_id=1500007318]
 position = Vector2(1912, 552)
 rotation = 1.5707964
 scale = Vector2(1.8097949, -0.26836583)
 script = ExtResource("2_68gdu")
-metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
 [node name="Polygon2D" type="Polygon2D" parent="PageWall15" unique_id=2142803988]
 color = Color(0.7000003, 0, 1, 1)

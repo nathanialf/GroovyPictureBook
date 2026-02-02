@@ -182,8 +182,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if position.x < 0 or position.y < 0 or position.x > 1920 or position.y > 1080:
-		print("DEATH")
+	if position.x < -100 or position.y < -100 or position.x > 2020 or position.y > 1180:
+		get_tree().reload_current_scene()
 
 func __activate_player() -> void:
 	if !get_parent(): page.add_child(self)

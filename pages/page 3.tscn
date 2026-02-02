@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_layix"]
 [ext_resource type="Texture2D" uid="uid://cda1t2ade1sxa" path="res://patterns/pattern_2.jpg" id="2_pn8t7"]
-[ext_resource type="Script" uid="uid://c0rr1uk6yfw5x" path="res://page_wall_simple.gd" id="4_vquol"]
+[ext_resource type="Script" path="res://page_wall_simple.gd" id="4_vquol"]
 
 [node name="Page3" type="Node2D" unique_id=255156775]
 script = ExtResource("1_layix")
@@ -14,108 +14,80 @@ metadata/_custom_type_script = "uid://1t6pghxubui0"
 position = Vector2(524, 172)
 scale = Vector2(9.66, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="Edge wall side" type="StaticBody2D" parent="." unique_id=1457600489]
 position = Vector2(0, 552.00006)
 rotation = 1.5707964
 scale = Vector2(10.443, 0.01)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="edgewall top and bottom" type="StaticBody2D" parent="." unique_id=1996176737]
 position = Vector2(693.99994, 1080.0001)
 rotation = 3.1415927
 scale = Vector2(13.895, 0.01)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="edgewall top and bottom2" type="StaticBody2D" parent="." unique_id=1394655070]
 position = Vector2(990.0001, -7.6293945e-06)
 rotation = 3.1415927
 scale = Vector2(19.850286, 0.009999997)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="Edge wall side2" type="StaticBody2D" parent="." unique_id=99662222]
 position = Vector2(1920, 552.00006)
 rotation = 1.5707964
 scale = Vector2(10.443, 0.01)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
-
-[node name="spot for pin4" type="Polygon2D" parent="." unique_id=140794636]
-position = Vector2(1169, 399)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
-uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
-
-[node name="spot for pin6" type="Polygon2D" parent="." unique_id=921366518]
-position = Vector2(315, 533)
-scale = Vector2(0.3, 0.3)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
-uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="PageWallSimple2" type="StaticBody2D" parent="." unique_id=695946965]
 position = Vector2(220, 612)
 rotation = 1.5707964
 scale = Vector2(8.97, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple3" type="StaticBody2D" parent="." unique_id=547140369]
 position = Vector2(404, 620)
 rotation = 1.5707964
 scale = Vector2(8.97, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple4" type="StaticBody2D" parent="." unique_id=167634450]
 position = Vector2(1052, 612)
 rotation = 1.5707964
 scale = Vector2(8.97, 4.76)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple5" type="StaticBody2D" parent="." unique_id=122706925]
 position = Vector2(1292.0001, 612)
 rotation = 1.5707964
 scale = Vector2(8.97, 5.096)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple6" type="StaticBody2D" parent="." unique_id=250749602]
 position = Vector2(28, 540)
 rotation = 1.5707964
 scale = Vector2(10.764001, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple7" type="StaticBody2D" parent="." unique_id=2017122215]
 position = Vector2(1492, 292)
 rotation = 1.5707964
 scale = Vector2(5.920201, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple8" type="StaticBody2D" parent="." unique_id=1653437659]
 position = Vector2(1483.9999, 764)
 scale = Vector2(2.898, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple9" type="StaticBody2D" parent="." unique_id=2079951981]
 position = Vector2(1620.0001, 868.00006)
 rotation = 1.5707964
 scale = Vector2(1.9891875, -1.2)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWallSimple10" type="StaticBody2D" parent="." unique_id=1756585996]
 position = Vector2(1756, 780)
 rotation = 1.5707964
 scale = Vector2(5.920201, 1)
 script = ExtResource("4_vquol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
