@@ -13,6 +13,18 @@ size = Vector2(600, 50)
 radius = 142.05
 height = 606.58
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnasd"]
+radius = 142.05
+height = 606.58
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ptun5"]
+radius = 142.05
+height = 606.58
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3n084"]
+radius = 142.05
+height = 606.58
+
 [node name="Page2Test" type="Node2D" unique_id=1659456041]
 script = ExtResource("1_hre08")
 page_color = Color(0.7000003, 0, 1, 1)
@@ -32,7 +44,7 @@ polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
 shape = SubResource("RectangleShape2D_1q5re")
 
 [node name="PageHole2" type="Area2D" parent="." unique_id=70557029]
-position = Vector2(748, -43.000004)
+position = Vector2(748, -43)
 scale = Vector2(0.72, 0.72)
 script = ExtResource("4_yra41")
 metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
@@ -125,22 +137,22 @@ polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
 uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="spot for pin4" type="Polygon2D" parent="." unique_id=1237060393]
-position = Vector2(185, 503)
+position = Vector2(345, 919)
 scale = Vector2(0.3, 0.3)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
 uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="spot for pin5" type="Polygon2D" parent="." unique_id=1597170900]
-position = Vector2(185, 207)
+position = Vector2(977, 567)
 scale = Vector2(0.3, 0.3)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
 uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
 
 [node name="PageWall5" type="StaticBody2D" parent="." unique_id=1240630850]
-position = Vector2(1648, 1032)
-scale = Vector2(0.73658717, 0.83864325)
+position = Vector2(1600, 1032)
+scale = Vector2(1.0606856, 0.6709146)
 script = ExtResource("2_68gdu")
 metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
@@ -150,3 +162,174 @@ polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall5" unique_id=1338992621]
 shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageWall6" type="StaticBody2D" parent="." unique_id=1397033276]
+position = Vector2(336, 520)
+scale = Vector2(0.29463488, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall6" unique_id=1744970526]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall6" unique_id=2046379316]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageHole3" type="Area2D" parent="." unique_id=549774611]
+position = Vector2(219.99998, 213)
+scale = Vector2(0.72, 0.72)
+script = ExtResource("4_yra41")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole3" unique_id=1207637428]
+position = Vector2(151.38895, 270.83328)
+rotation = 1.5707964
+scale = Vector2(0.84000003, 0.4)
+shape = SubResource("CapsuleShape2D_pnasd")
+
+[node name="PageWall7" type="StaticBody2D" parent="." unique_id=51830525]
+position = Vector2(208, 499)
+rotation = 1.5707964
+scale = Vector2(1.6705797, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall7" unique_id=852290459]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall7" unique_id=838956914]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageWall8" type="StaticBody2D" parent="." unique_id=498572304]
+position = Vector2(336, 1016)
+scale = Vector2(0.5008793, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall8" unique_id=1865666908]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall8" unique_id=1152358320]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageHole4" type="Area2D" parent="." unique_id=46719690]
+position = Vector2(227.99998, 133)
+scale = Vector2(0.72, 0.72)
+script = ExtResource("4_yra41")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole4" unique_id=1140646764]
+position = Vector2(140.27783, 770.83325)
+rotation = 1.5707964
+scale = Vector2(0.84000003, 0.4)
+shape = SubResource("CapsuleShape2D_ptun5")
+
+[node name="PageWall9" type="StaticBody2D" parent="." unique_id=754128554]
+position = Vector2(704, 1016)
+scale = Vector2(0.8249776, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall9" unique_id=125233710]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall9" unique_id=300628675]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageWall10" type="StaticBody2D" parent="." unique_id=2119424905]
+position = Vector2(744, 224)
+scale = Vector2(1.031222, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall10" unique_id=519997189]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall10" unique_id=803927923]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageWall11" type="StaticBody2D" parent="." unique_id=135512226]
+position = Vector2(1272, 904)
+rotation = 1.5707964
+scale = Vector2(0.515611, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall11" unique_id=2059975904]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall11" unique_id=2118655511]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageWallSimple2" type="StaticBody2D" parent="." unique_id=1103680485]
+position = Vector2(1100.9999, 893)
+rotation = -0.6420656
+scale = Vector2(4.2161317, 2.6638184)
+script = ExtResource("5_pnasd")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWall12" type="StaticBody2D" parent="." unique_id=602677374]
+position = Vector2(1704, 671.99994)
+rotation = 1.5707964
+scale = Vector2(0.7734165, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall12" unique_id=1176686254]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall12" unique_id=745196841]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageWall13" type="StaticBody2D" parent="." unique_id=327018384]
+position = Vector2(1568, 637)
+rotation = 1.5707964
+scale = Vector2(0.57635, 0.17611508)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall13" unique_id=1633992434]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall13" unique_id=189048386]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="PageHole5" type="Area2D" parent="." unique_id=622213808]
+position = Vector2(1028.0001, 813.00006)
+scale = Vector2(0.72, 0.72)
+script = ExtResource("4_yra41")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole5" unique_id=923738599]
+position = Vector2(206.94434, 226.38884)
+rotation = 1.5707964
+scale = Vector2(0.588, 0.28)
+shape = SubResource("CapsuleShape2D_3n084")
+
+[node name="PageWall14" type="StaticBody2D" parent="." unique_id=723005002]
+position = Vector2(1104, 1057)
+scale = Vector2(0.49498656, 0.83864325)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall14" unique_id=1608641184]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall14" unique_id=1511412225]
+shape = SubResource("RectangleShape2D_1q5re")
+
+[node name="spot for pin6" type="Polygon2D" parent="." unique_id=1263548923]
+position = Vector2(1065, 999.00006)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)

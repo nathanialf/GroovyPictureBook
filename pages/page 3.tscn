@@ -11,8 +11,8 @@ page_background = ExtResource("2_pn8t7")
 metadata/_custom_type_script = "uid://1t6pghxubui0"
 
 [node name="PageWallSimple" type="StaticBody2D" parent="." unique_id=1471754669]
-position = Vector2(508, 172)
-scale = Vector2(6.9, 1)
+position = Vector2(524, 172)
+scale = Vector2(9.66, 1)
 script = ExtResource("4_vquol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
@@ -41,5 +41,54 @@ metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 position = Vector2(1920, 552.00006)
 rotation = 1.5707964
 scale = Vector2(10.443, 0.01)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="spot for pin4" type="Polygon2D" parent="." unique_id=140794636]
+position = Vector2(1169, 399)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="spot for pin6" type="Polygon2D" parent="." unique_id=921366518]
+position = Vector2(315, 533)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="PageWallSimple2" type="StaticBody2D" parent="." unique_id=695946965]
+position = Vector2(220, 612)
+rotation = 1.5707964
+scale = Vector2(8.97, 1)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple3" type="StaticBody2D" parent="." unique_id=547140369]
+position = Vector2(404, 620)
+rotation = 1.5707964
+scale = Vector2(8.97, 1)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple4" type="StaticBody2D" parent="." unique_id=167634450]
+position = Vector2(1052, 612)
+rotation = 1.5707964
+scale = Vector2(8.97, 4.76)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple5" type="StaticBody2D" parent="." unique_id=122706925]
+position = Vector2(1292.0001, 612)
+rotation = 1.5707964
+scale = Vector2(8.97, 5.096)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple6" type="StaticBody2D" parent="." unique_id=1888568099]
+position = Vector2(1172, 1068)
+rotation = 3.1415927
+scale = Vector2(1.8837001, 1.4280001)
 script = ExtResource("4_vquol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"

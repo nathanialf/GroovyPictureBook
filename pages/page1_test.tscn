@@ -16,24 +16,31 @@ size = Vector2(1200, 50)
 size = Vector2(200, 200)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu7iq"]
-radius = 142.05
+radius = 102.77777
+height = 424.3828
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o8wol"]
+radius = 88.88916
+height = 606.58
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0svsi"]
+radius = 88.88916
 height = 606.58
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gm8eh"]
 radius = 88.88916
 height = 606.58
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvu3r"]
+radius = 88.88916
+height = 606.58
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uqx6j"]
+
 [node name="Page1Test" type="Node2D" unique_id=1877032122]
 scale = Vector2(0.9999999, 0.9999999)
 script = ExtResource("1_be057")
 page_background = ExtResource("3_0svsi")
-page_move_speed_scalar = null
-page_jump_force_scalar = null
-page_wall_jump_force_scalar = null
-page_movement_weight_air_scalar = null
-page_movement_weight_ground_scalar = null
-page_sliding_acceleration_scalar = null
-page_gravity_acceleration_scalar = null
 metadata/_custom_type_script = "uid://1t6pghxubui0"
 
 [node name="PageWall" type="StaticBody2D" parent="." unique_id=1622899687]
@@ -110,16 +117,15 @@ shape = SubResource("RectangleShape2D_woo8u")
 metadata/_edit_lock_ = true
 
 [node name="PageHole" type="Area2D" parent="." unique_id=514313105]
-position = Vector2(534.00006, 406.00006)
-scale = Vector2(0.43199998, 0.71999997)
+position = Vector2(486.00006, 406.00006)
 script = ExtResource("4_gm8eh")
 metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole" unique_id=207306761]
+position = Vector2(64.00001, 0)
 rotation = 1.5707964
-scale = Vector2(1.0000001, 1.0000001)
+scale = Vector2(1, 0.6)
 shape = SubResource("CapsuleShape2D_fu7iq")
-metadata/_edit_lock_ = true
 
 [node name="PageHole2" type="Area2D" parent="." unique_id=1871625000]
 position = Vector2(956, 301)
@@ -130,7 +136,7 @@ metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole2" unique_id=1665822926]
 position = Vector2(1036.1111, -58.333336)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_gm8eh")
+shape = SubResource("CapsuleShape2D_o8wol")
 
 [node name="PageWallSimple" type="StaticBody2D" parent="." unique_id=889240602]
 position = Vector2(1712, 359)
@@ -192,7 +198,7 @@ metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole3" unique_id=1314158794]
 position = Vector2(1036.1111, -58.333336)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_gm8eh")
+shape = SubResource("CapsuleShape2D_0svsi")
 
 [node name="spot for pin2" type="Polygon2D" parent="." unique_id=646653825]
 position = Vector2(305.00006, 920.0001)
@@ -273,3 +279,31 @@ position = Vector2(2436.111, 1152.778)
 rotation = 1.5707964
 scale = Vector2(0.8999999, 0.7999999)
 shape = SubResource("CapsuleShape2D_gm8eh")
+
+[node name="PageHole5" type="Area2D" parent="." unique_id=36546505]
+position = Vector2(-132, 148.99998)
+scale = Vector2(0.72, 0.72)
+script = ExtResource("4_gm8eh")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole5" unique_id=324868255]
+position = Vector2(2436.111, 1152.778)
+rotation = 1.5707964
+scale = Vector2(0.8999999, 0.7999999)
+shape = SubResource("CapsuleShape2D_fvu3r")
+
+[node name="spot for pin4" type="Polygon2D" parent="." unique_id=144963082]
+position = Vector2(1313.0001, 136.00002)
+scale = Vector2(0.3, 0.3)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
+uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="PageHole6" type="Area2D" parent="." unique_id=1513691775]
+position = Vector2(1624.0002, 456.00006)
+scale = Vector2(4.499999, 3.3999996)
+script = ExtResource("4_gm8eh")
+metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole6" unique_id=957822133]
+shape = SubResource("CapsuleShape2D_uqx6j")
