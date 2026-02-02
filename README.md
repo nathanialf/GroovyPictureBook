@@ -16,3 +16,10 @@ Programming and Music: [Steven Schoen](https://github.com/DSteve595)
 Production/Project Managment: [Nathanial Fine](https://github.com/nathanialf)
 
 Bass Guitar: [Martin Bayer](https://soundcloud.com/martin_bayer)
+
+## Release Information
+[Global Game Jam 2026 Page](https://globalgamejam.org/games/2026/groovypicturebook-9)
+
+[Play In Browser](https://nathanialf.github.io/GroovyPictureBook/GroovyPictureBook.html)
+
+[Itch](https://wiley-fox-productions.itch.io/groovy-picture-book)
