@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1t6pghxubui0" path="res://page.gd" id="1_hre08"]
 [ext_resource type="Script" path="res://page_wall.gd" id="2_68gdu"]
-[ext_resource type="Texture2D" uid="uid://wby8w1ftit4c" path="res://patterns/240_F_1627967903_EThzw96k8FJTjIDZHupQaEvwfzLUzUad.jpg" id="3_yra41"]
+[ext_resource type="Texture2D" uid="uid://5h3g4ou21t7w" path="res://patterns/pattern_4.png" id="2_pnasd"]
 [ext_resource type="Script" uid="uid://c6uyhv5ax61qe" path="res://page_hole.gd" id="4_yra41"]
 [ext_resource type="Script" path="res://page_wall_simple.gd" id="5_pnasd"]
 
@@ -28,7 +28,7 @@ height = 606.58
 [node name="Page2Test" type="Node2D" unique_id=1659456041]
 script = ExtResource("1_hre08")
 page_color = Color(0.7000003, 0, 1, 1)
-page_background = ExtResource("3_yra41")
+page_background = ExtResource("2_pnasd")
 metadata/_custom_type_script = "uid://1t6pghxubui0"
 
 [node name="PageWall" type="StaticBody2D" parent="." unique_id=267178102]
