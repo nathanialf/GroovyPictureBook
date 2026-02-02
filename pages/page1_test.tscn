@@ -128,7 +128,7 @@ scale = Vector2(1, 0.6)
 shape = SubResource("CapsuleShape2D_fu7iq")
 
 [node name="PageHole2" type="Area2D" parent="." unique_id=1871625000]
-position = Vector2(956, 301)
+position = Vector2(940.0001, 301.00003)
 scale = Vector2(0.72, 0.72)
 script = ExtResource("4_gm8eh")
 metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
@@ -139,8 +139,8 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_o8wol")
 
 [node name="PageWallSimple" type="StaticBody2D" parent="." unique_id=889240602]
-position = Vector2(1712, 359)
-scale = Vector2(3.4999998, 1.4999999)
+position = Vector2(1728.0002, 359.00003)
+scale = Vector2(3.8499994, 1.4999998)
 script = ExtResource("5_o8wol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
@@ -235,13 +235,6 @@ scale = Vector2(19.850286, 0.009999997)
 script = ExtResource("5_o8wol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
-[node name="Edge wall side2" type="StaticBody2D" parent="." unique_id=1306816527]
-position = Vector2(1920, 552.00006)
-rotation = 1.5707964
-scale = Vector2(10.443, 0.01)
-script = ExtResource("5_o8wol")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
-
 [node name="PageWallSimple9" type="StaticBody2D" parent="." unique_id=1825410548]
 position = Vector2(1440.0001, 984.0001)
 rotation = 1.5707964
@@ -307,3 +300,10 @@ metadata/_custom_type_script = "uid://c6uyhv5ax61qe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageHole6" unique_id=957822133]
 shape = SubResource("CapsuleShape2D_uqx6j")
+
+[node name="PageWallSimple13" type="StaticBody2D" parent="." unique_id=842742545]
+position = Vector2(1912.0002, 368.00003)
+rotation = 1.5707964
+scale = Vector2(7.3972845, 0.7499994)
+script = ExtResource("5_o8wol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"

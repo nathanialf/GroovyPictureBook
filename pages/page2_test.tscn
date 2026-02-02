@@ -101,13 +101,6 @@ polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall4" unique_id=1584606258]
 shape = SubResource("RectangleShape2D_1q5re")
 
-[node name="Edge wall side" type="StaticBody2D" parent="." unique_id=687287747]
-position = Vector2(0, 552.00006)
-rotation = 1.5707964
-scale = Vector2(10.443, 0.01)
-script = ExtResource("5_pnasd")
-metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
-
 [node name="edgewall top and bottom" type="StaticBody2D" parent="." unique_id=349725531]
 position = Vector2(1006.00006, 1080.0002)
 rotation = 3.1415927
@@ -333,3 +326,17 @@ scale = Vector2(0.3, 0.3)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-100, -100, 100, -100, 100, 100, -100, 100)
 uv = PackedVector2Array(-20, -20, 231, -111, 238, 36, -131, 44)
+
+[node name="PageWall15" type="StaticBody2D" parent="." unique_id=1500007318]
+position = Vector2(1912, 552)
+rotation = 1.5707964
+scale = Vector2(1.8097949, -0.26836583)
+script = ExtResource("2_68gdu")
+metadata/_custom_type_script = "uid://ct6uppvyratyn"
+
+[node name="Polygon2D" type="Polygon2D" parent="PageWall15" unique_id=2142803988]
+color = Color(0.7000003, 0, 1, 1)
+polygon = PackedVector2Array(-300, -25, 300, -25, 300, 25, -300, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PageWall15" unique_id=948579374]
+shape = SubResource("RectangleShape2D_1q5re")

@@ -24,9 +24,9 @@ script = ExtResource("4_vquol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="edgewall top and bottom" type="StaticBody2D" parent="." unique_id=1996176737]
-position = Vector2(1006.00006, 1080.0002)
+position = Vector2(693.99994, 1080.0001)
 rotation = 3.1415927
-scale = Vector2(19.850286, 0.009999997)
+scale = Vector2(13.895, 0.01)
 script = ExtResource("4_vquol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
@@ -86,9 +86,36 @@ scale = Vector2(8.97, 5.096)
 script = ExtResource("4_vquol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
-[node name="PageWallSimple6" type="StaticBody2D" parent="." unique_id=1888568099]
-position = Vector2(1172, 1068)
-rotation = 3.1415927
-scale = Vector2(1.8837001, 1.4280001)
+[node name="PageWallSimple6" type="StaticBody2D" parent="." unique_id=250749602]
+position = Vector2(28, 540)
+rotation = 1.5707964
+scale = Vector2(10.764001, 1)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple7" type="StaticBody2D" parent="." unique_id=2017122215]
+position = Vector2(1492, 292)
+rotation = 1.5707964
+scale = Vector2(5.920201, 1)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple8" type="StaticBody2D" parent="." unique_id=1653437659]
+position = Vector2(1483.9999, 764)
+scale = Vector2(2.898, 1)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple9" type="StaticBody2D" parent="." unique_id=2079951981]
+position = Vector2(1620.0001, 868.00006)
+rotation = 1.5707964
+scale = Vector2(1.9891875, -1.2)
+script = ExtResource("4_vquol")
+metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
+
+[node name="PageWallSimple10" type="StaticBody2D" parent="." unique_id=1756585996]
+position = Vector2(1756, 780)
+rotation = 1.5707964
+scale = Vector2(5.920201, 1)
 script = ExtResource("4_vquol")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
