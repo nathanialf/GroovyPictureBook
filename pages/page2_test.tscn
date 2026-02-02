@@ -62,8 +62,8 @@ script = ExtResource("5_pnasd")
 metadata/_custom_type_script = "uid://c0rr1uk6yfw5x"
 
 [node name="PageWall2" type="StaticBody2D" parent="." unique_id=1896383127]
-position = Vector2(1608, 392)
-scale = Vector2(0.73658717, 0.83864325)
+position = Vector2(1648, 392)
+scale = Vector2(0.86180705, 0.9225076)
 script = ExtResource("2_68gdu")
 metadata/_custom_type_script = "uid://ct6uppvyratyn"
 
