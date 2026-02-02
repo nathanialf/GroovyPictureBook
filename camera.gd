@@ -10,7 +10,7 @@ var __offset: Vector2
 @export var game_target: Node3D
 @export var book_cover: Node3D
 
-var use_smooth = true
+var use_smooth := true
 
 func _ready() -> void:
 	__x_target_anim.updated.connect(
@@ -26,8 +26,8 @@ var __did_first_move := false
 func notify_moved_player(delta) -> void:
 	use_smooth=true
 	if !__did_first_move:
-		__x_target_anim.snap_to(__player.position.x + __offset.x)
-		__y_target_anim.snap_to(__player.position.y + __offset.y)
+		__x_target_anim.snap_to(position.x)
+		__y_target_anim.snap_to(position.y)
 		position.x = __x_target_anim.current
 		position.y = __y_target_anim.current
 		__did_first_move = true
